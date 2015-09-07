@@ -103,12 +103,12 @@ p23
       Items: Individual entity that is discrete. Row in a simple table or a node in a network. (People, stocks, coffee shops, genes, or cities).
       Attributes: Some specific property that can be measured, observed, or logged. (Salary, price, number of sales, protein expression level, temperature).
       Links: is a relationship between items. typically within a network.
-      Positions: spatial data, provading a location in 2d or 3d. (latitude-longitude or three numbers specifying a location within the region os space measured by a medical scanner).
+      Positions: spatial data, provading a location in 2d or 3d. (latitude-longitude or three numbers specifying a location within the region of space measured by a medical scanner).
       Grid: Specifies the strategy for sampling continuous data in terms of both geometric and topological relationships between its cells.
 
 p24
     2.4 Dataset Types
-      Datset: Collection of information that is the target od analysis 
+      Datset: Collection of information that is the target of analysis 
       4 basic dataset types.
         Tables        Items - Attributes
         Networks      Items(nodes)  - Attributes  - Links 
@@ -138,7 +138,7 @@ p34
     2.6 Semantics
     The classification in this book is heavily focused on the semantics:
     Keys vs values,     and the related questions of 
-    Spatial and continuos data vs nonspatial and discrete data    to match up  with the idiom design choice analsis framwork.
+    Spatial and continuos data vs nonspatial and discrete data    to match up  with the idiom design choice analysis framework.
     
       Key => as index
       value => attribute 
@@ -155,7 +155,7 @@ p36
 p37
       2.6.1.3 'Fields'
         Although fields differ from tables a fundamental way because they represent continuous rather than discrete data. On 'spatial field' independent variable is used instead key, and dependent variable instead of value.
-        Structured by sampling ina systematic way so that each grid cell is spanned by a unique range from a continuous domain. Ex the visualization of material resistance.
+        Structured by sampling in a systematic way so that each grid cell is spanned by a unique range from a continuous domain. Ex the visualization of material resistance.
         Characterized in terms of number of key vs values.
           Multivariate structure depends on the number of value attributes.
           Multidimensional structure depends on the number of keys.
@@ -174,7 +174,8 @@ CHAPTER III | Why: Task Abstraction
 
   Actions & Targets
     Verbs describing actions and nouns describing targets.
-  3.4 Actions
+
+  3.4 ACTIONS
     Three levels of 'actions' define USER GOALS.
     Analyze Level (highest). how is been used to analyze
       Consume or Produce info.
@@ -223,6 +224,109 @@ p49
           The record choice saves a persistent artifact, in contrast to the annotate, which attaches information temporarily to existing elements.
   
         3.4.2.3 Derive
+          The common case is that deriving new data is a choice made by vis designers, but this choice could also be driven by a user of a vis tool.
+          Don't just draw what  you're given; decide what the right thing to show is, create it with a series of transformations from the original dataset, and draw that. 
+          A dataset often needs to be transformed beyond its original state in order to create a visual encoding that can solve the desired problem
+          Tod do so we can create DERIVED ATTRIBUTES that extends the dataset beyond the original set of attributes that it contains. Synonym of 'derive' is 'transform'.
+
+    3.4.3 Search
+      All the high-level analyze case require to 'search' for elements of interest within the vis as a mid-level goal
+      Classification of search: whether the identity and location of the search target is already known or not.
+      
+      3.4.3.1 Lookup
+        Users already know both, that they are looking for and where it is, just 'lookup'.
+      3.4.3.2 Locate
+        Find a known target at an unknown location.
+      3.4.3.3 Browse
+        Exact identity of a search target is unknown in advance. it might be specified based on characteristics. User is searching 1 or more items that fit some kind of specifications.
+        When the user do not know exactly what they are looking for, but they do have a location in mind  of where to look for it, the search type is 'browse'.
+      3.4.3.4 Explore
+        When the user is not even sure of the location, the search type is 'explore'. (Searching for outliers in a scatterplot, for anomalous spikes or periodic patterns in a line graph of time-series data)
+
+    3.4.4 Query
+      Once a target of set targets are found. A low-level user goal is to 'query' at one of three scopes.
+        'identify'    =>    single target
+        'compare'     =>    multiple target
+        'summarize'   =>    full set of possible targets
+
+      3.4.4.1 Identify
+        If a search returns known targets, either by 'lookup' or 'locate', then 'identify' returns their characteristics.
+      3.4.4.2 Compare
+        The scope of 'compare' is multiple targets.
+      3.4.4.3 Summarize
+        The scope is all possible targets. a synonym is 'overview'.
+
+
+  3.5 TARGETS
+    The 'ACTIONS' discussed above refer to a 'target', meaning some aspect of the data that is of interest to the user.
+    Target are nouns, Actions are verbs.
+    Three high-level targets are broadly relevant.
+      'Trend' high-level characterization of a pattern in the data (increase, decrease, peaks, troughs, pleatus)
+      'Outiers' data does not fit well with that backdrop
+      'Features' task dependent, meaning any particular structures of interest
+    
+    Attributes are specific properties that are visually encoded. The lowest-level for an attribute is to find an individual value.
+    Another frequent target is to find the extremes: maximum or minimum value across the range.
+    
+    Some targets encompass the scope of multiple attributes.
+      A first attribute can have a 'dependency' on a second
+      There is a 'correlation' between one attribute and another if there is a tendency for the values of second to be tied to those of the first.
+      The 'similarity' between two attributes can be defined as a quantitative measurement calculated on all of their values, allowing attributes to be ranked with respect to how 'similar' or 'different', they are from each other.
+      
+    Some targets pertains to some specific datasets.
+      Network data specifies relationships between nodes as links.
+      The fundamental target with network data is to understand the structure of these interconnections. that is, the network's TOPOLOGY.
+
+      A more specific topological target is a 'path' of one or more links that connects two nodes.
+
+      For spatial data, indestanding and comparing the geometric 'shape' is the common target of user actions.
+
+  3.6 HOW: A PREVIEW
+    Third part of an analysis instance rtio is 'how' a vis idiom can be constructed out of a set of design choices.
+
+    Families:
+
+      Encode: how encode data within a view. How to arrange data spatially: express value, separate, order and align region, and use given spatial data.
+        Include how to map data with all of the nonspatial visual channels including, color, size, angle, shape, and many more.
+
+      Manipulate: Change any aspect of the view
+        Select elements from within the view.
+        Navigate to change the viewpoint within the view.
+
+      Facet: How to facet data between views has choices for 
+        How to juxtapose and coordinate multiple views
+        How to partition data between views
+        How to superimpose layers on top of each other.
+
+      Reduce: Has the options of filter data away, 
+        Aggregate many data elements together.
+        Embed focus and context information together within a single view.
+        
+  3.7 ANALYZING AND DERIVING:  EXAMPLES
+
+
+======================================================================================================================================
+
+4 CHAPTER IV | ANALYSIS: FOUR LEVELS FOR VALIDATION
+
+The four nested levels of vis design have threats to validity at each level, and validation approaches should be chosen accordingly
+
+Domain Situation: Observe target users using existing tools
+  Data / task abstraction
+    Visual encoding / Interaction idiom
+      Algorithm
+        Measure system time / memory
+        Analyze computational complexity
+    Analyze results qualitatively
+    Measure human time with lab experiment (lab study)
+  Observe target users after deployment (field study)
+Measure adoption
+
+
+      
+
+
+        
 
 
         
