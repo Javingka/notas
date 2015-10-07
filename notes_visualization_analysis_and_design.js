@@ -23,8 +23,8 @@ CHAPTER I
 
 p1
   VIS for short: 
-    "Computer-based visualization systems provide viusal representation of datasets designed to help carry out task more effectively."
-    "Visualizatoin is suitable when there is a need to augment human capabilities rather than replace people with computational decision-making methods. The design space of possible vis idioms is huge, and includes the consideration of both how to create how to interact with visual representations.
+    "Computer-based visualization systems provide visual representation of datasets designed to help carry out task more effectively."
+    "Visualization is suitable when there is a need to augment human capabilities rather than replace people with computational decision-making methods. The design space of possible vis idioms is huge, and includes the consideration of both how to create how to interact with visual representations.
     Vis design is full of trade-offs, and most possibilities in the design space are inefective for a particular task, so validating the effectiveness of a design is both necesary and dificult. 
     Vis designers must take into account three different kinds of resource limitations: Those of computers, of humans, and of displays.
     Vis usage can be analysed in terms of why the user needs it, what data is shown, and how the idiom is designed."
@@ -43,7 +43,7 @@ p6
   1.4 Why Use External...
   External representations augment human capability by allowing us to surpass the limitations of our own internal cognition and memory.
 
-  Diagram as external memory: Organized by spation location.
+  Advantages of diagram as external memory: Info can be organized by spation location.
     Search: Can be speed up         by   grouping all the items needed for a specific problem-solving inference together at the same location.
     Recognition: can be facilitated by   grouping all the relevant information about one item in the same location, avoiding the need fot matching remembered symbolic labels.
 
@@ -85,6 +85,10 @@ p17
       - WHAT the user sees.
       - WHY the user intends to use a vis tool
       - HOW the visual encoding and interaction idioms are constructed in terms of design choices.
+    or
+      - WHAT data is shown in the views.
+      - WHY is the task been performed.
+      - HOW is the Viz idiom constructed in terms of choices.
 
     Each three fold WHAT-WHY-HOW question has a corresponding DATA-TASK-IDIOM answer trio.
 
@@ -244,7 +248,7 @@ p49
         When the user is not even sure of the location, the search type is 'explore'. (Searching for outliers in a scatterplot, for anomalous spikes or periodic patterns in a line graph of time-series data)
 
     3.4.4 Query
-      Once a target of set targets are found. A low-level user goal is to 'query' at one of three scopes.
+      Once a target or set targets are found. A low-level user goal is to 'query' at one of three scopes.
         'identify'    =>    single target
         'compare'     =>    multiple target
         'summarize'   =>    full set of possible targets
@@ -282,7 +286,7 @@ p49
       For spatial data, indestanding and comparing the geometric 'shape' is the common target of user actions.
 
   3.6 HOW: A PREVIEW
-    Third part of an analysis instance rtio is 'how' a vis idiom can be constructed out of a set of design choices.
+    Third part of an analysis instance trio is 'how' a vis idiom can be constructed out of a set of design choices.
 
     Families:
 
@@ -311,17 +315,18 @@ p49
 
 The four nested levels of vis design have threats to validity at each level, and validation approaches should be chosen accordingly
 
-Domain Situation: Observe target users using existing tools
-  Data / task abstraction
-    Visual encoding / Interaction idiom
-      Algorithm
-        Measure system time / memory
-        Analyze computational complexity
-    Analyze results qualitatively
-    Measure human time with lab experiment (lab study)
-  Observe target users after deployment (field study)
-Measure adoption
+Cascading levels:
 
+Domain Situation: Observe target users using existing tools
+|  Data / task abstraction
+|  |  Visual encoding / Interaction idiom
+|  |  |  Algorithm ↓ 
+|  |  |    Measure system time / memory
+|  |  ↓    Analyze computational complexity
+|  |  Analyze results qualitatively
+|  ↓  Measure human time with lab experiment (lab study)
+↓  Observe target users after deployment (field study)
+Measure adoption
 
       
 

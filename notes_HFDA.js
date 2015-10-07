@@ -144,6 +144,12 @@ Un ejemplo clásico es el lanzamiento de una moneda para luego lanzar un dado. �
   equals
   1 - Probability of a negative (-) test result, given that the person does not have the flu. ==> True Negative
 
+p178 
+  BASE RATE
+  The average number of times an event occurs divided by the average number  of times it might occurs (freedictionary)
+  1% of the populations has lizard flu. One percent is the BASE RATE. Prior to any analysis and learning ypu know this. That is why BASE RATES are also called PRIOR PROBABILITIES 
+  If you do have a BASE RATE and you dont use it. you will fall victim to the BASE RATE FALLACY, where you ignore your prior data and make the wrong decision because of it.
+
 p182
   Bayes’ rule manages your base rates when you get new data
 
@@ -154,5 +160,56 @@ p182
   The Base Rate (people who have the flu)  *  People with positive tests having the flu (true positive rate)
   /
   The Base Rate with flu * true positive rate + Base RAte with no flu * false positive rate
+
+p208
+  The 'Standard deviation measures how far points are from the average".
+  Most of the points in a data set will be within one standard deviation of the mean.
+  
+  Ex. in a data set between these values (dots represent values):
+
+                               average 
+                           . .. .|. . .   . 
+                   .   .      . .|..  . . 
+                        ..   .. .|. . .      .
+                    .       .. ..|. .. .   .
+                        .    . ..|.. ..  .
+                    .   .  .  ...|. ....  . .   .     
+  0.0   0.1   0.2   0.3   0.4   0.5   0.6   0.7   0.8   0.9   1.0
+                           ____________ 
+          between 0.4 - 0.5 & 0.5 to 0.6 is 'One standard deviation" => 0.1
+
+  Most observation in any data set are going to be within one standard deviation of the mean
+  In 'Excel' you cancalculate with the formula  = STDEV (data range)
+
+p216
+  On Subjective probabilities chapter:
+  Alongside the BackWather Investiments example. While analysing possibilities using subjectives probabilities, has come out some questions about posibilities to analyse the data adding some recent 'hard' data. Here used to recapitulate the analytics tools seen up to now, maybe it will help to better undesrtand these tools.
+
+  Analytic tools listed. Why would you or wouldn't you use each of these to incorporate 'hard' data onto subjective probabilities 
+
+1  Experimental Design? ( the starbucks coffee example. with experiment in the shops to prove hypotheses )
+    R: It is kind of hard to imagine what sort of experiment you could run to get better data. Since all the analyst are evaluating geopolitical events, it seems that every single piece of data they are looking at is observational. 
+
+2  Optimization? ( Ducks and fish example. You have 'Contraints' limiting the variables you can control. And you have 'Decision' variables that you actually CAN control. You have an 'Optimization problem', you want to get as much or as little of something as possible, and the way you will get it is by changing the values of other quantities.)
+    R: There is no hard numerical data!. The optimization tools we have learned presuppose that you have numerical data and a numerical result you want to maximize or minimize. Nothing for optimization here.
+
+3  A nice graphics? (Info visualization, site analysis example. Show the data, a good data analysis begins and ends with thinking with data. Data visualization is all about making the right comparisions. The best visualizations are highly multivariate, namely, compare three or more variables.)
+    R:  There is almost always room for a nice data visualization. Once we have revised the subjective probabilities, we will certainly want a new visualization, but for now, we need a tool that gives us better numbers. 
+
+5  Hypothesis testing? ( celular skin example. Data analysis enables you to ecaluate a bunch od options so that you can incorporate all the information you have into your models. You looks for ways to compare yours hypotheses with the data you have. When you are looking for data variables, it's a good idea to ask whether they are POSITIVELY or NEGATIVELY linked.
+  As an analyst you need to see beyond simple models, and expect to see CAUSAL NETWORKS. In the real world 'causes' propagate across a network of relatet variables... why should your models be any different?.
+  You hace a Main Questions. the answers are your hypotheses. FALSIFICATION is one of the methods, where you eliminate the disconfirmed hypotheses.
+  Other important concepto DIAGNOSTICITY -> Evidence and data are Diagnosticity if they help you assess the relative strengths of hypotheses.)
+    R: There is definitely a role for HYPOTHESES TESTING IN PROBLEMS LIKE THIS ONE, and the analyst might use it to derive their beliefs about Russia's bahavior. 'But our job is to figure out specifically how the new data changes people's subjective probabilities, and it's not clear hoy hypotheses testing would do that.
+
+6  Bayes' rule? ' (The lizard flu example. Bayes Rule is a handy analytic tool. An incredibly powerful statistical formula that enables you to use BASE RATES along with your conditional probabilities to estimate new conditionals probabilities. See a couple of lines above.)
+    R: Now this sounds promising. Using each analyst's first subjective probability as a BASE RATE, maybe we can use Bayer's rule to processs this new information.
+
+
+p217
+  BAYERS RULE is great for revising subjectives probabilities. It allow you to incorporate new evidence to your beliefs about your hypotheses.
+
+
+
 
 
