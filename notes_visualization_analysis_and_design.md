@@ -417,21 +417,25 @@ Vaildating the effectiveness os a vis design at each level of the nested model
 
   >- **Domain Situation**   
   >  **Threat:** Wong problem  You missunderstood their needs  
-  >  **Validate:** Observe and interview target users.  
 
   > >- **Data/Task abstraction**    
-  > **Threat:** Wrong abstraction: You are showing them the wrong thing   
-  > **Validate:** Test on target users, collect anecdotal evidence of utility    
-  > **Validate:** Field study, document human usage of deployed systema   
+  > > **Threat:** Wrong abstraction: You are showing them the wrong thing   
 
   > > >- **Visual encoding/interaction idiom**
-  > **Threat:** Wrong idiom: The way you show it does not work
-  > **Validate:** Qualitative/quantitative  result image analysis. Test on any users, informal usability study
-  > **Validate:** Lab study, measure human time/errors for task
+  > > > **Threat:** Wrong idiom: The way you show it does not work
+  > > > **Validate:** Justify encoding/interaction design 
 
-  > > > >- **Algorithm**
-  > **Threat:** Wrong algorithm : Your code is too slow
-  > **Validate:** Analyze computational complexity → Implement system →  Measure system time/memory.
+  > > > >- **Algorithm**  
+  > > > > **Threat:** Wrong algorithm : Your code is too slow   
+  > > > > **Validate:** Analyze computational complexity → Implement system →  Measure system time/memory.   
+
+  > > > **Validate:** Qualitative/quantitative  result image analysis. Test on any users, informal usability study
+  > > > **Validate:** Lab study, measure human time/errors for task
+
+  > > **Validate:** Test on target users, collect anecdotal evidence of utility    
+  > > **Validate:** Field study, document human usage of deployed systema   
+
+  >  **Validate:** Observe and interview target users.  
 
   *they* means the targer Users
   *you* means the vis designer
