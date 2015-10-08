@@ -363,17 +363,17 @@ THESE LEVELS ARE NESTED: The output form an 'upstream' level above is the input 
         
 #C Visual encoding and Interaction Idiom → 
     
-    Create and manipulate the visual representation of the abstract data block choosed at the previous level, guided by the abstract tasks that you also identified at that level.
+Create and manipulate the visual representation of the abstract data block choosed at the previous level, guided by the abstract tasks that you also identified at that level.
 
-    ##**Idiom** each distinct possible approach
-      ###**Visual encoding** 
+##**Idiom** each distinct possible approach
+###**Visual encoding** 
         Set of design choices covers how to create a *single* picture of data →  Visual Encoding Idiom →  Controls exactly that users **see**.
-      ###**Interaction**
+###**Interaction**
         Set of questions involves how to manipulate that representation dynamically →  Interaction Idiom →  Controls how users **change** what they **see**.
 
-    *While it’s often possible to analyze encoding and interaction idioms as separable decisions, in some cases these decisions are so intertwined that it’s best to consider the outcome of these choices to be a single combined idiom. *
+*While it’s often possible to analyze encoding and interaction idioms as separable decisions, in some cases these decisions are so intertwined that it’s best to consider the outcome of these choices to be a single combined idiom. *
 
-    **Idiom Blocks** are designed: they are the outcome of decisions that you make
+**Idiom Blocks** are designed: they are the outcome of decisions that you make
 
 #D Algorithm → 
 
