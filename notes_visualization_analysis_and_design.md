@@ -415,9 +415,9 @@ p75
 
 Vaildating the effectiveness os a vis design at each level of the nested model
 
-  >- **Domain Situation      **
-  > **Threat: ** Wong problem  You missunderstood their needs
-  > **Validate: ** Observe and interview target users.
+  >-  **Domain Situation  **  
+  >  **Threat: ** Wong problem  You missunderstood their needs  
+  >  **Validate: ** Observe and interview target users.  
 
   >>- **Data/Task abstraction **    
   > **Threat: ** Wrong abstraction: You are showing them the wrong thing   
