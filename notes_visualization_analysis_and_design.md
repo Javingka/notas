@@ -318,14 +318,14 @@ The four nested levels of vis design have threats to validity at each level, and
 Cascading levels:
 
 A. Domain Situation: Observe target users using existing tools
-|  B. Data / task abstraction
-|  |  C. Visual encoding / Interaction idiom
-|  |  |  D. Algorithm ↓ 
-|  |  |    Measure system time / memory
-|  |  ↓    Analyze computational complexity
-|  |  Analyze results qualitatively
-|  ↓  Measure human time with lab experiment (lab study)
-↓  Observe target users after deployment (field study)
+  B. Data / task abstraction
+    C. Visual encoding / Interaction idiom
+      D. Algorithm ↓ 
+        Measure system time / memory
+        Analyze computational complexity
+    Analyze results qualitatively
+    Measure human time with lab experiment (lab study)
+  Observe target users after deployment (field study)
 Measure adoption
 
 A→  The situation level, where you consider the details of a particular application domain.
@@ -367,9 +367,9 @@ Create and manipulate the visual representation of the abstract data block choos
 
 ####Idiom each distinct possible approach
 #####Visual encoding 
-        Set of design choices covers how to create a *single* picture of data →  Visual Encoding Idiom →  Controls exactly that users **see**.
+Set of design choices covers how to create a *single* picture of data →  Visual Encoding Idiom →  Controls exactly that users **see**.
 #####Interaction
-        Set of questions involves how to manipulate that representation dynamically →  Interaction Idiom →  Controls how users **change** what they **see**.
+Set of questions involves how to manipulate that representation dynamically →  Interaction Idiom →  Controls how users **change** what they **see**.
 
 *While it’s often possible to analyze encoding and interaction idioms as separable decisions, in some cases these decisions are so intertwined that it’s best to consider the outcome of these choices to be a single combined idiom. *
 
