@@ -437,8 +437,13 @@ Vaildating the effectiveness os a vis design at each level of the nested model
 
   >  **Validate:** Observe and interview target users.  
 
-  *they* means the targer Users
-  *you* means the vis designer
+*__they__* means the targer users & *__you__* means the vis designer
+
+
+
+#5 CHAPTER V | The Big Picture 
+
+
 
 
 
