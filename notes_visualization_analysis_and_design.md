@@ -356,7 +356,7 @@ Questions from very different domain situations can map to the same abstract vis
 Examples of abstract tasks include browsing, comparing, and summarizing
 
 **DOMAIN SITUATION** block are **IDENTIFIED** at the Domain Situation level.
-**TASK** blocks are **IDENTIFIED** by the designer as being suitable for a particular domain situation block
+**TASK** blocks are **IDENTIFIED** by the designer as being suitable for a particular domain situation block.
 **ABSTRACT DATA** blocks are **_DESIGNED_**. A creative design step 
 
 The data abstraction level requires you to consider whether and how the same dataset provided by a user should be transformed into another form 
@@ -365,17 +365,17 @@ The data abstraction level requires you to consider whether and how the same dat
     
 Create and manipulate the visual representation of the abstract data block choosed at the previous level, guided by the abstract tasks that you also identified at that level.
 
-##**Idiom** each distinct possible approach
-###**Visual encoding** 
+####Idiom each distinct possible approach
+#####Visual encoding 
         Set of design choices covers how to create a *single* picture of data →  Visual Encoding Idiom →  Controls exactly that users **see**.
-###**Interaction**
+#####Interaction
         Set of questions involves how to manipulate that representation dynamically →  Interaction Idiom →  Controls how users **change** what they **see**.
 
 *While it’s often possible to analyze encoding and interaction idioms as separable decisions, in some cases these decisions are so intertwined that it’s best to consider the outcome of these choices to be a single combined idiom. *
 
 **Idiom Blocks** are designed: they are the outcome of decisions that you make
 
-#D Algorithm → 
+###D Algorithm → 
 
 Creating an **algorithm** involves all of the design choices involved in this innermost level.
 The goal is to efficiently handle the visual encoding and interaction **Idioms** that you chose in the previous level.
