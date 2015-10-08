@@ -335,33 +335,33 @@ D→  Design of algorithms to instantiate those idioms computationally.
 
 THESE LEVELS ARE NESTED: The output form an 'upstream' level above is the input to the 'downstream' level below 
 
-#A Domain Situation →  Encompasses a group of target users, and their: 
-      Domain of interest: The particular field of interestof the target users.
-        Each domain usually has its own vocabulary for describing its data and problems 
-    At this level, situation blocks are identified. The outcome of the design process is an understanding that the designer reaches about the needs of the user.
-      Methos typically used: Interviews, observations, or careful research about target users within a specific domain.
+###A Domain Situation →  Encompasses a group of target users, and their: 
+
+Domain of interest: The particular field of interestof the target users.
+Each domain usually has its own vocabulary for describing its data and problems 
+At this level, situation blocks are identified. The outcome of the design process is an understanding that the designer reaches about the needs of the user.
+Methos typically used: Interviews, observations, or careful research about target users within a specific domain.
       
-      OUTCOME: A detailed set of questions asked about or actions carried out by the target users, about a possible heterogeneous collection of data that is also understood in detail.
-      It should be specific enough to be useful as input to the next desing level
+**OUTCOME:** A detailed set of questions asked about or actions carried out by the target users, about a possible heterogeneous collection of data that is also understood in detail.
+It should be specific enough to be useful as input to the next desing level
 
-      /** In this point the author uses 'domain-specific' term. Then uses 'domain-independent', I can infer 'domain-independent' refers to a generic representation that can wrap different kinds of 'domain-specific' data, with a similar needs for a vis tool   */ 
+*In this point the author uses 'domain-specific' term. Then uses 'domain-independent', I can infer 'domain-independent' refers to a generic representation that can wrap different kinds of 'domain-specific' data, with a similar needs for a vis tool* 
 
-#B Data / task abstraction →  Requires abstracting the specific domain questions and data from the domain-specific form that they have at the top level...
-    ...into a generic representation.
+###B Data / task abstraction →  Requires abstracting the specific domain questions and data from the domain-specific form that they have at the top level...  ...into a generic representation.
       
-        Abstracting into the 'domain-independent' vocabulary allows you to realize how domain situation blocks that are described using very different language might have similar reasons why the user needs the vis tool and what data it shows.
+Abstracting into the 'domain-independent' vocabulary allows you to realize how domain situation blocks that are described using very different language might have similar reasons why the user needs the vis tool and what data it shows.
 
-        Questions from very different domain situations can map to the same abstract vis tasks.
+Questions from very different domain situations can map to the same abstract vis tasks.
 
-        Examples of abstract tasks include browsing, comparing, and summarizing
+Examples of abstract tasks include browsing, comparing, and summarizing
 
-        DOMAIN SITUATION block are IDENTIFIED at the Domain Situation level.
-        TASK blocks are IDENTIFIED by the designer as being suitable for a particular domain situation block
-        ABSTRACT DATA blocks are DESIGNED. A creative design step 
+**DOMAIN SITUATION** block are **IDENTIFIED** at the Domain Situation level.
+**TASK** blocks are **IDENTIFIED** by the designer as being suitable for a particular domain situation block
+**ABSTRACT DATA** blocks are **_DESIGNED_**. A creative design step 
 
-        The data abstraction level requires you to consider whether and how the same dataset provided by a user should be transformed into another form 
+The data abstraction level requires you to consider whether and how the same dataset provided by a user should be transformed into another form 
         
-#C Visual encoding and Interaction Idiom → 
+###C Visual encoding and Interaction Idiom → 
     
 Create and manipulate the visual representation of the abstract data block choosed at the previous level, guided by the abstract tasks that you also identified at that level.
 
