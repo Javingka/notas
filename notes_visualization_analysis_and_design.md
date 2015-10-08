@@ -419,10 +419,10 @@ Vaildating the effectiveness os a vis design at each level of the nested model
   > **Threat: ** Wong problem  You missunderstood their needs
   > **Validate: ** Observe and interview target users.
 
-  >>- **Data/Task abstraction **
-  > **Threat: ** Wrong abstraction: You are showing them the wrong thing
-  > **Validate: ** Test on target users, collect anecdotal evidence of utility
-  > **Validate: ** Field study, document human usage of deployed system
+  >>- **Data/Task abstraction **    
+  > **Threat: ** Wrong abstraction: You are showing them the wrong thing   
+  > **Validate: ** Test on target users, collect anecdotal evidence of utility    
+  > **Validate: ** Field study, document human usage of deployed systema   
   >>>- **Visual encoding/interaction idiom       **
   > **Threat: ** Wrong idiom: The way you show it does not work
   > **Validate: ** Qualitative/quantitative  result image analysis. Test on any users, informal usability study
