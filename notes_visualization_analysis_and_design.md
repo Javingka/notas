@@ -329,8 +329,11 @@ A. Domain Situation: Observe target users using existing tools
 Measure adoption
 
 A→  The situation level, where you consider the details of a particular application domain.
+
 B→  The What-Why abstraction level, you map those domain-specific problems and data into forms that are independent of the domain.
+
 C→  The How level is the design of idioms that specify the approach to visual encoding and interaction.
+
 D→  Design of algorithms to instantiate those idioms computationally.
 
 THESE LEVELS ARE NESTED: The output form an 'upstream' level above is the input to the 'downstream' level below 
