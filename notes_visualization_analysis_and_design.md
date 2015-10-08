@@ -335,13 +335,13 @@ Cascading levels:
 
   Measure adoption
 
-A→  The situation level, where you consider the details of a particular application domain.
+**A→**  The situation level, where you consider the details of a particular application domain.
 
-B→  The What-Why abstraction level, you map those domain-specific problems and data into forms that are independent of the domain.
+**B→**  The **What-Why abstraction** level, you map those domain-specific problems and data into forms that are independent of the domain.
 
-C→  The How level is the design of idioms that specify the approach to visual encoding and interaction.
+**C→**  The **How** level is the design of **idioms** that specify the approach to visual encoding and interaction.
 
-D→  Design of algorithms to instantiate those idioms computationally.
+**D→**  Design of algorithms to instantiate those idioms computationally.
 
 THESE LEVELS ARE NESTED: The output form an 'upstream' level above is the input to the 'downstream' level below 
 
@@ -393,6 +393,47 @@ The goal is to efficiently handle the visual encoding and interaction **Idioms**
 Algorithm blocks are also **designed** rather than identified.
 
 Nested models enphasizes separating **Algorithm design** from **Idiom design**. The first is where your primary concerns are about computational issues, while the second is where your primary concerns are about human perceptual issues.
+
+## Angles of attack for vis design
+p.73
+
+Two common angles of attack **top down** and **bottom up**
+
+### Problem-driven work
+
+You start at the **top domain** situation level and work your way down through abstraction, idiom and algorithm decisions.
+
+### Technique-driven work
+
+You work at one of the bottom two levels, idiom or algorithm design.
+
+#####Invent new **idioms** that better support existing **abstractions**
+#####Create new **algorithms** that better support existing **idioms**
+
+## Threats to Validity
+p75
+
+Vaildating the effectiveness os a vis design at each level of the nested model
+
+  >- **Domain Situation      **
+  > **Threat: ** Wong problem  You missunderstood their needs
+  > **Validate: ** Observe and interview target users.
+  >>- **Data/Task abstraction **
+  > **Threat: ** Wrong abstraction: You are showing them the wrong thing
+  > **Validate: ** Test on target users, collect anecdotal evidence of utility
+  > **Validate: ** Field study, document human usage of deployed system
+  >>>- **Visual encoding/interaction idiom       **
+  > **Threat: ** Wrong idiom: The way you show it does not work
+  > **Validate: ** Qualitative/quantitative  result image analysis. Test on any users, informal usability study
+  > **Validate: ** Lab study, measure human time/errors for task.
+  >>>>- **Algorithm  **
+  > **Threat: ** Wrong algorithm : Your code is too slow
+  > **Validate: ** Analyze computational complexity → Implement system →  Measure system time/memory.
+
+  *they* means the targer Users
+  *you* means the vis designer
+
+
 
 
     
