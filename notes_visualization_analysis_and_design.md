@@ -317,20 +317,16 @@ The four nested levels of vis design have threats to validity at each level, and
 
 Cascading levels:
 
-A. Domain Situation: Observe target users using existing tools ↓
-
-  B. Data / task abstraction ↓
-
-    C. Visual encoding / Interaction idiom ↓
-
-      D. Algorithm ↓ 
-
-        Measure system time / memory
-        Analyze computational complexity
-    Analyze results qualitatively
-    Measure human time with lab experiment (lab study)
-  Observe target users after deployment (field study)
-Measure adoption
+  A. Domain Situation: Observe target users using existing tools ↓
+    B. Data / task abstraction ↓
+      C. Visual encoding / Interaction idiom ↓
+        D. Algorithm ↓ 
+          Measure system time / memory
+          Analyze computational complexity
+      Analyze results qualitatively
+      Measure human time with lab experiment (lab study)
+    Observe target users after deployment (field study)
+  Measure adoption
 
 A→  The situation level, where you consider the details of a particular application domain.
 
