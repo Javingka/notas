@@ -377,12 +377,12 @@ THESE LEVELS ARE NESTED: The output form an 'upstream' level above is the input 
 
 #D Algorithm → 
 
-    Creating an **algorithm** involves all of the design choices involved in this innermost level.
-    The goal is to efficiently handle the visual encoding and interaction **Idioms** that you chose in the previous level.
+Creating an **algorithm** involves all of the design choices involved in this innermost level.
+The goal is to efficiently handle the visual encoding and interaction **Idioms** that you chose in the previous level.
 
-    Algorithm blocks are also **designed** rather than identified.
+Algorithm blocks are also **designed** rather than identified.
 
-    Nested models enphasizes separating **Algorithm design** from **Idiom design**. The first is where your primary concerns are about computational issues, while the second is where your primary concerns are about human perceptual issues.
+Nested models enphasizes separating **Algorithm design** from **Idiom design**. The first is where your primary concerns are about computational issues, while the second is where your primary concerns are about human perceptual issues.
 
 
     
