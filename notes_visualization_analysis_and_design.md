@@ -460,7 +460,7 @@ Graphic basic element. Geometric primitive object classified according to the nu
 
 A way to control the appearance of marks, independent of the dimensionality of the geometric primitive. \* *Figure 5.3. (pag 96)*   
 
- ![Visual Chanels](imgs/visual_chanels.jpg)
+![Visual Chanels](imgs/visual_chanels.jpg)
 
 Visual chanels
 
@@ -471,6 +471,7 @@ Visual chanels
 >- **Curvature** 
 >- **Shape** 
 
+![Visual Chanels](imgs/marks_chanels.jpg)
  
 
 
