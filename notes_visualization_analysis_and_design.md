@@ -508,7 +508,7 @@ The human perceptual system has two fundamentally different kinds of sensory mod
 
 ![Visual Chanels](imgs/expressiveness_types_and_effectiveness_ranks.jpg)  
 
-
+#### 5.5 Chanel Effectiveness
 
 
     
