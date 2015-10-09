@@ -451,12 +451,12 @@ Marks are basic geometric elements that depict items or links, and channels cont
 
 Graphic basic element. Geometric primitive object classified according to the number od spatial dimensions.
 
->- **0D** → zero-dimensional  → point  
->- **1D** → one-dimensional   → line   
->- **2D** → two-dimensional   → areas   
->- **3D** → three-dinemsional → volume
+- **0D** → zero-dimensional  → point  
+- **1D** → one-dimensional   → line   
+- **2D** → two-dimensional   → areas   
+- **3D** → three-dinemsional → volume
 
-#### Visual Chanels
+#### 5.3 Visual Chanels
 
 A way to control the appearance of marks, independent of the dimensionality of the geometric primitive. \* *Figure 5.3. (pag 96)*   
 
@@ -464,16 +464,49 @@ A way to control the appearance of marks, independent of the dimensionality of t
 
 Visual chanels
 
->- **Color** hue, saturation, luminance.
->- **Size** 1D→ length  | 2D→ area  | 3D→ volume
->- **Motion-oriented →** Motion pattern (oscilating circles versus straight jumps, direction of motion, velocity.
->- **Motion-oriented →** Angle or tilt.
->- **Curvature** 
->- **Shape** 
+- **Color** hue, saturation, luminance.
+- **Size** 1D→ length  | 2D→ area  | 3D→ volume
+- **Motion-oriented →** Motion pattern (oscilating circles versus straight jumps, direction of motion, velocity.
+- **Motion-oriented →** Angle or tilt.
+- **Curvature** 
+- **Shape** 
 
 ![Visual Chanels](imgs/marks_chanels.jpg)
  
 
+##### 5.3.1 Chanels 
+
+The human perceptual system has two fundamentally different kinds of sensory modalities.
+
+**Identity chanels** → **what** something is or **where** it is.  
+
+**Magnitude chanels**  → **How much** of something there is.
+
+##### 5.3.1 Mark types  
+
+**Conection mark** A pairwise relationship between two items, using a line. 
+**Containment mark** Hierarchical relationships using areas
+*ideia: the gaps resulting by the area formed within three or more nodes links could be a visual chanel too. Something in between Conection and Containment*  
+
+![Visual Chanels](imgs/marks_nodes_links.jpg)
+
+#### 5.4 Using Marks and Chanels   
+
+##### 5.4.1 Expressiveness and Effectiveness  
+
+**Expressiveness principle** The visual encoding should express all of, and only, the information in the dataset attributes.  
+
+- **Ordered** data should be shown in a way that our perceptual system intrinsically senses as **ordered**  
+- **Unordered** data should not be shown in a wat that perceptually implies an **ordering** that **does not exist**.  
+
+**Efectiveness principle** The attribute should match the salience of the channel. Its noticeable.   
+
+- **Most important attributes** should be encoded  with the **most effective chanels**  
+- **Decreasingly important attributes** can be matched with **less effective chanels**  
+
+##### 5.4.2 Chanel Rankings
+
+![Visual Chanels](imgs/expressiveness_types_and_effectiveness_ranks.jpg)  
 
 
 
