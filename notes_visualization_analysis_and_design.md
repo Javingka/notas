@@ -443,6 +443,35 @@ Vaildating the effectiveness os a vis design at each level of the nested model
 
 #5 CHAPTER V | The Big Picture 
 
+### The Big Picture
+
+Marks are basic geometric elements that depict items or links, and channels control their appearance. The effectiveness of a channel for encoding data depends on its type: the channels that percep- tually convey magnitude information are a good match for ordered data, and those that convey identity information with categorical data. Figure 5.1 summarizes the channel rankings.
+
+#### Marks
+
+Graphic basic element. Geometric primitive object classified according to the number od spatial dimensions.
+
+>- **0D** → zero-dimensional  → point  
+>- **1D** → one-dimensional   → line   
+>- **2D** → two-dimensional   → areas   
+>- **3D** → three-dinemsional → volume
+
+#### Visual Chanels
+
+A way to control the appearance of marks, independent of the dimensionality of the geometric primitive. \* *Figure 5.3. (pag 96)*   
+
+ ![Visual Chanels](imgs/visual_chanels.jpg)
+
+Visual chanels
+
+>- **Color** hue, saturation, luminance.
+>- **Size** 1D→ length  | 2D→ area  | 3D→ volume
+>- **Motion-oriented →** Motion pattern (oscilating circles versus straight jumps, direction of motion, velocity.
+>- **Motion-oriented →** Angle or tilt.
+>- **Curvature** 
+>- **Shape** 
+
+ 
 
 
 
