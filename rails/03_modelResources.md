@@ -8,12 +8,12 @@ This means representing data as *resources* that can be created, shown, updated 
 - DELETE →   destroyed 
 
 Add the next line to config/routes.rb
-´´´
+´´´   
 resorces :users  # :users is the name of the User model created for wich we will get a full list of functionally routes
-```
+```   
 
-here are tje RESTful routes provided by the Users resource adobe declarated:
-```
+here are the RESTful routes provided by the Users resource adobe declarated:
+```   
 HTTP-request 	URL 	        Action        Named route 	            Purpose                           View file
 GET 	        /users 	      **index** 	  **users_path** 	          page to list all users            app/views/users/index.html.erb
 GET 	        /users/1 	    **show** 	    **user_path(user)** 	    page to show user                 app/views/users/show.html.erb
@@ -22,7 +22,7 @@ POST 	        /users 	      **create** 	  **users_path** 	          create a new
 GET 	        /users/1/edit **edit** 	    **edit_user_path(user)** 	page to edit user with id 1       app/views/users/edit.htm.erb
 PATCH 	      /users/1 	    **update** 	  **user_path(user)** 	    update user                       *exist just as a controller method  
 DELETE 	      /users/1 	    **destroy** 	**user_path(user)** 	    delete user                       *exist just as a controller method   
-```
+```   
 
 The 'new' file, already exist. Was created when the user model was created declarating one new method (modelingUser.md)  
   app/views/users/new.html.erb   
