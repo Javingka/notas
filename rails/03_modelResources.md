@@ -8,9 +8,8 @@ This means representing data as *resources* that can be created, shown, updated 
 - DELETE →   destroyed 
 
 Add the next line to config/routes.rb    
-
-´´´   
-resorces :users  # :users is the name of the User model created for wich we will get a full list of functionally routes
+```   
+resorces :users  # :users is the name of the User model created for wich we will get a full list of functionally routes   
 ```   
 
 here are the RESTful routes provided by the Users resource adobe declarated:   
