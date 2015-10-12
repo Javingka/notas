@@ -7,12 +7,13 @@ This means representing data as *resources* that can be created, shown, updated 
 - PATH   →   updated
 - DELETE →   destroyed 
 
-Add the next line to config/routes.rb
+Add the next line to config/routes.rb    
+
 ´´´   
 resorces :users  # :users is the name of the User model created for wich we will get a full list of functionally routes
 ```   
 
-here are the RESTful routes provided by the Users resource adobe declarated:
+here are the RESTful routes provided by the Users resource adobe declarated:   
 ```   
 HTTP-request 	URL 	        Action        Named route 	            Purpose                           View file
 GET 	        /users 	      **index** 	  **users_path** 	          page to list all users            app/views/users/index.html.erb
@@ -24,7 +25,7 @@ PATCH 	      /users/1 	    **update** 	  **user_path(user)** 	    update user   
 DELETE 	      /users/1 	    **destroy** 	**user_path(user)** 	    delete user                       *exist just as a controller method   
 ```   
 
-The 'new' file, already exist. Was created when the user model was created declarating one new method (modelingUser.md)  
+The 'new' file, already exist. Was created when the user model was created declarating one new method (modelingUser.md)   
   app/views/users/new.html.erb   
 Create the others *.html.erb files nedded  
   app/views/users/show.html.erb  
