@@ -15,13 +15,13 @@ resorces :users  # :users is the name of the User model created for wich we will
 here are the RESTful routes provided by the Users resource adobe declarated:   
 ```   
 HTTP-request 	URL 	        Action        Named route 	            Purpose                           View file
-GET 	        /users 	      **index** 	  **users_path** 	          page to list all users            app/views/users/index.html.erb
-GET 	        /users/1 	    **show** 	    **user_path(user)** 	    page to show user                 app/views/users/show.html.erb
-GET 	        /users/new 	  **new** 	    **new_user_path** 	      page to make a new user (signup)  app/views/users/new.html.erb
-POST 	        /users 	      **create** 	  **users_path** 	          create a new user                 *exist just as a controller method  
-GET 	        /users/1/edit **edit** 	    **edit_user_path(user)** 	page to edit user with id 1       app/views/users/edit.htm.erb
-PATCH 	      /users/1 	    **update** 	  **user_path(user)** 	    update user                       *exist just as a controller method  
-DELETE 	      /users/1 	    **destroy** 	**user_path(user)** 	    delete user                       *exist just as a controller method   
+GET 	        /users 	      index 	      users_path 	              page to list all users            app/views/users/index.html.erb
+GET 	        /users/1 	    show 	        user_path(user) 	        page to show user                 app/views/users/show.html.erb
+GET 	        /users/new 	  new 	        new_user_path 	          page to make a new user (signup)  app/views/users/new.html.erb
+POST 	        /users 	      create 	      users_path 	              create a new user                 *exist just as a controller method  
+GET 	        /users/1/edit edit 	        edit_user_path(user) 	    page to edit user with id 1       app/views/users/edit.htm.erb
+PATCH 	      /users/1 	    update 	      user_path(user) 	        update user                       *exist just as a controller method  
+DELETE 	      /users/1 	    destroy 	    user_path(user) 	        delete user                       *exist just as a controller method   
 ```   
 
 The 'new' file, already exist. Was created when the user model was created declarating one new method (modelingUser.md)   
