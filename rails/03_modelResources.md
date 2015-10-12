@@ -25,8 +25,11 @@ DELETE 	      /users/1 	    destroy 	    user_path(user) 	        delete user   
 ```   
 
 The 'new' file, already exist. Was created when the user model was created declarating one new method (modelingUser.md)   
+
 -  app/views/users/new.html.erb   
-Create the others *.html.erb files nedded  
+
+Create the others *.html.erb files nedded   
+
 -  app/views/users/show.html.erb  
 -  app/views/users/edit.html.erb  
 -  app/views/users/index.html.erb  
