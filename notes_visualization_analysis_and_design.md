@@ -510,15 +510,50 @@ The human perceptual system has two fundamentally different kinds of sensory mod
 
 #### 5.5 Chanel Effectiveness
 
+##### 5.5.1 Accuracy  
 
-    
+We perceive different visual channels with different levels of accuracy   
+
+![Psychophysical power law of Stevens](imgs/psychophysical_power_law_of_Stevens.jpg)  
+
+Here length means the length of a line segment on a 2D plane perpendicular to the ob- server. The other visual channels are not perceived as accurately: area and brightness are compressed, while red–gray saturation is magnified.   
+
+Another set of answers to the question of accuracy comes from controlled experiments that directly map human response to vi- sually encoded abstract information.  
+
+![Error rates across visual channel](imgs/error_rates_across_visual_channels.jpg)  
+
+##### 5.5.2 Discriminability
+
+**if you encode data using a par- ticular visual channel, are the differences between items percepti- ble to the human as intended?**   
+
+The characterization of visual channel thus should quantify the number of **bins** that are available for use within a visual channel, where each bin is a distinguishable step or level from the other.   
+
+Linewidth can work very well to show three or four different values for a data attribute, but it would be a poor choice for dozens or hundreds of values.   
+
+![Linewidth](imgs/lines_width.jpg)  
+
+###### The key factor is matching the ranges:   
+**The number of different values that need to be shown for the attribute being encoded must not be greater than the number of bins available for the visual channel used to encode it.**  
+
+##### 5.5.3 Separability
+
+You must consider a continuum of potential interactions between channels for each pair, ranging from the orthogonal and independent **separable channels** to the inextricably combined **integral channels**.  
+
+
+![Integrality versus separability](imgs/integrality_versus_separability.jpg)  
         
+Integrality versus separability is not good or bad; the important idea is to match the characteristics of the channels to the information that is encoded.   
+ If the goal is to show the user two different data attributes, either of which can be attended to selectively, then a separable channel pair of position and color hue is a good choice.   
+If the goal is to show a single data attribute with three categories, then the integral channel pair of horizontal and vertical size is a reasonable choice because it yields the three groups of small, flattened, and large.        
 
+##### 5.5.4 Popout
 
-        
+Many visual channels provide visual popout, where a distinct item stands out from many others immediately. 
 
+![Visual popout I](imgs/visual_popout_i.jpg)   
 
-      
-
+![Visual popout II](imgs/visual_popout_ii.jpg)  
     
-    
+##### 5.5.5 Grouping
+
+
