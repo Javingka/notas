@@ -539,8 +539,7 @@ Linewidth can work very well to show three or four different values for a data a
 
 You must consider a continuum of potential interactions between channels for each pair, ranging from the orthogonal and independent **separable channels** to the inextricably combined **integral channels**.  
 
-
-![Integrality versus separability](imgs/integrality_versus_separability.jpg)  
+![Integrality_versus_separability](imgs/integrality_versus_separability.jpg)   
         
 Integrality versus separability is not good or bad; the important idea is to match the characteristics of the channels to the information that is encoded.   
  If the goal is to show the user two different data attributes, either of which can be attended to selectively, then a separable channel pair of position and color hue is a good choice.   
@@ -550,9 +549,9 @@ If the goal is to show a single data attribute with three categories, then the i
 
 Many visual channels provide visual popout, where a distinct item stands out from many others immediately. 
 
-![Visual popout I](imgs/visual_popout_i.jpg)   
+![Visual_popout_I](imgs/visual_popout_i.jpg)   
 
-![Visual popout II](imgs/visual_popout_ii.jpg)  
+![Visual_popout_II](imgs/visual_popout_ii.jpg)  
     
 ##### 5.5.5 Grouping
 
