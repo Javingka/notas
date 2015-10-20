@@ -8,7 +8,7 @@ Tidy datasets provide a standardized way to link the structure of a dataset (its
 ### 2.1 Data structure
 Most statistical datasets are rectangular tables made up of rows and columns. The columns are almost always labelled and the rows are sometimes labelled.
 
-![normal tables](/home/javingka/Documents/viz/notas/imgs/tidy_data_img/normalTable.png)
+![normal tables](imgs/tidy_data_img/normalTable.png)
 
 In addition to appearance, we need a way to describe the underlying semantics, or meaning, of the values displayed in table
 
@@ -26,7 +26,7 @@ Table 3 reorganises Table 1 to make the values, variables and obserations more c
 > 18 values representing:
 >> 3 variables and 6 observations.
 
-![table 3](/home/javingka/Documents/viz/notas/imgs/tidy_data_img/table3.png)  
+![table 3](imgs/tidy_data_img/table3.png)  
 
 The variables are:
 - person, with three possible values (John, Mary, and Jane). 
@@ -55,8 +55,8 @@ A dataset is messy or tidy depending on how rows, columns and tables are matched
 
 Table 3 is the tidy version of Table 1. Each row represents an observation, the result of one treatment on one person, and each column is a variable.
 
-![normal tables](/home/javingka/Documents/viz/notas/imgs/tidy_data_img/normalTable.png)
-![table 3](/home/javingka/Documents/viz/notas/imgs/tidy_data_img/table3.png)  
+![normal tables](imgs/tidy_data_img/normalTable.png)
+![table 3](imgs/tidy_data_img/table3.png)  
 
 Tidy data is particularly well suited for vectorised programming languages like R, because the layout ensures that values of different variables from the same observation are always paired. 
 
@@ -82,7 +82,7 @@ Surprisingly, most messy datasets, including types of messiness not explicitly d
 
 This dataset explores the relationship between income and religion in the US. 
 
-![table 4](/home/javingka/Documents/viz/notas/imgs/tidy_data_img/table4.png)  
+![table 4](imgs/tidy_data_img/table4.png)  
 
 This dataset has three variables, religion, income and frequency. To tidy it, we need to melt, or stack it. In other words, we need to turn columns into rows.
 
