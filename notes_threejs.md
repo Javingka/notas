@@ -164,6 +164,7 @@ When you use the **lookAt** function, you point the camera at a specific positio
 > **Basic properties**: These are the properties you will use most often. With these properties, you can, for instance, control the opacity of the object, whether it is visible, and how it is referenced (by ID or custom name).   
 
 > **Blending properties**: Every object has a set of blending properties. These properties define how the object is combined with its background.     
+  
 > **Advanced properties**: There are a number of advanced properties that control how the low-level WebGL context renders objects. In most cases, you wont need to mess with these properties.  
 
 ##### Basic Properties
@@ -304,9 +305,12 @@ sizeAttenuation, color) {
 **fog** This determines whether the particles are affected by fog added to the scene. This defaults to true.   
 
 Others ways to style the particles:  
-> We can apply THREE.SpriteCanvasMaterial (which only works for THREE. CanvasRenderer ) to use the results from an HTML canvas element as a texture   
-> Use **THREE.SpriteMaterial** and a HTML5-based texture to use the output of an HTML canvas when working with THREE.WebGLRenderer  
-> Load an external image file (or use the HTML5 canvas) with the map property of THREE.PointsMaterial to style all particles of THREE.Points  
+> We can apply THREE.SpriteCanvasMaterial (which only works for THREE. CanvasRenderer ) to use the results from an HTML canvas element as a texture.    
+
+> Use **THREE.SpriteMaterial** and a HTML5-based texture to use the output of an HTML canvas when working with THREE.WebGLRenderer.    
+
+> Load an external image file (or use the HTML5 canvas) with the map property of THREE.PointsMaterial to style all particles of THREE.Points     
+
 
 #### Using HTML5 canvas with WebGLRenderer 
 
@@ -372,8 +376,8 @@ scene.add(sprite);
 }
 }
 ```
-> With THREE.Sprite , you have more control over the individual particle, but it becomes less performant and more complex when you are working with a large number of particles.  
-> With THREE.Points , you can easily manage a large number of particles, but have less control over each individual particle.  
+- With THREE.Sprite , you have more control over the individual particle, but it becomes less performant and more complex when you are working with a large number of particles.  
+- With THREE.Points , you can easily manage a large number of particles, but have less control over each individual particle.  
 
 
 
