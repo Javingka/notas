@@ -123,7 +123,7 @@ Good default: window.innerWidth / window.innerHeight
 **left**  
   This is described in the Three.js documentation as Camera frustum left plane. You should see this as what is the left-hand border of what will be rendered. If you set this value to -100, you wont see any objects that are farther to the left-hand side.   
 **right**  
-  The right property works in a way similar to the left property, but this time, to the other side of the screen. Anything farther to the right won`t be rendered.  
+  The right property works in a way similar to the left property, but this time, to the other side of the screen. Anything farther to the right wont be rendered.  
 **top**  
   This is the top position to be rendered.  
 **bottom**   
@@ -137,7 +137,7 @@ Good default: window.innerWidth / window.innerHeight
 
 ![Orthographic_scheme](imgs/threejs/camOr0.jpg)   
 
-When you use the **lookAt** function, you point the camera at a specific position. You can also use this to make the camera follow an object around the scene. Since every **THREE.Mesh** object has a position that is a **THREE.Vector3** object, you can use the lookAt function to point to a specific mesh in the scene. All you need to do is this: **camera.lookAt(mesh.position)**. If you call this in the render loop, you`ll make the camera follow an object as it moves through the scene. 
+When you use the **lookAt** function, you point the camera at a specific position. You can also use this to make the camera follow an object around the scene. Since every **THREE.Mesh** object has a position that is a **THREE.Vector3** object, you can use the lookAt function to point to a specific mesh in the scene. All you need to do is this: **camera.lookAt(mesh.position)**. If you call this in the render loop, you will make the camera follow an object as it moves through the scene. 
 
 ### Materials  
 
@@ -161,18 +161,19 @@ When you use the **lookAt** function, you point the camera at a specific positio
   This is the same as LineBasicMaterial, but this material also allows you to create a dashed effect.   
 
 #### Common material properties
-> **Basic properties**: These are the properties you`ll use most often. With these properties, you can, for instance, control the opacity of the object, whether it is visible, and how it is referenced (by ID or custom name).   
-> **Blending properties**: Every object has a set of blending properties. These properties define how the object is combined with its background.  
-> **Advanced properties**: There are a number of advanced properties that control how the low-level WebGL context renders objects. In most cases, you won`t need to mess with these properties.  
+> **Basic properties**: These are the properties you will use most often. With these properties, you can, for instance, control the opacity of the object, whether it is visible, and how it is referenced (by ID or custom name).   
+
+> **Blending properties**: Every object has a set of blending properties. These properties define how the object is combined with its background.     
+> **Advanced properties**: There are a number of advanced properties that control how the low-level WebGL context renders objects. In most cases, you wont need to mess with these properties.  
 
 ##### Basic Properties
 **id** This is used to identify a material and is assigned when you create a material. This starts at 0 for the first material and is increased by 1 for each additional material that is created.   
 **uuid** This is a uniquely generated ID and is used internally.  
 **name** You can assign a name to a material with this property. This can be used for debugging purposes.   
 **opacity** This defines how transparent an object is. Use this together with the transparent property. The range of this property is from 0 to 1.    
-**transparent** If this is set to true, Three.js will render this object with the set opacity. If this is set to false, the object won`t be transparent—just more lightly colored. This property should also be set to true if you use a texture that uses an alpha (transparency) channel.     
+**transparent** If this is set to true, Three.js will render this object with the set opacity. If this is set to false, the object wont be transparent—just more lightly colored. This property should also be set to true if you use a texture that uses an alpha (transparency) channel.     
 **overdraw**  When you use THREE.CanvasRenderer, the polygons will be rendered a bit bigger. Set this to true when you see gaps when using this renderer.  
-**visible**  This defines whether this material is visible. If you set this to false, you won`t see the object in the scene.   
+**visible**  This defines whether this material is visible. If you set this to false, you wont see the object in the scene.   
 **Side**  With this property, you can define to which side of the geometry a material is applied. The default is THREE.Frontside, which applies the material to the front (outside) of an object. You can also set this to THREE.BackSide, which applies is to the back (inside), or THREE.DoubleSide, which applies it to both sides.  
 **needsUpdate**  For some updates to the material, you need to tell Three.js that the material has been changed. If this property is set to true, Three.js will update its cache with the new material properties.  
 
@@ -191,8 +192,8 @@ When you use the **lookAt** function, you point the camera at a specific positio
 **wireframeLinejoin** This defines how the line joints are visualized. The possible values are round, bevel, and miter. The default value is round. If you look very closely, you can see this in the example using low opacity and a very large wireframeLinewidth value. This property isn't supported on WebGLRenderer.  
 **Shading** This defines how shading is applied. The possible values are THREE.SmoothShading, THREE.NoShading, and THREE. FlatShading. The default value is THREE.SmoothShading, which results in a smooth object where you won't see the individual faces. This property isn't enabled in the example for this material. For an example, look at the section on MeshNormalMaterial.  
 **vertexColors**  You can define individual colors to be applied to each vertex with this property. The default value is THREE.NoColors. If you set this value to THREE.VertexColors, the renderer will take the colors set on the colors property of THREE. Geometry into account. 
-This property doesn`t work on CanvasRenderer but does work on WebGLRenderer. Look at the LineBasicMaterial example, where we use this property to color the various parts of a line. You can also use this property to create a gradient effect for this material type.   
-**fog** This property determines whether this material is affected by global fog settings. This is not shown in action, but if this is set to false, the global fog we saw in Chapter 2, Basic Components That Make Up a Three.js Scene, doesn`t affect how this object is rendered.  
+This property doesnt work on CanvasRenderer but does work on WebGLRenderer. Look at the LineBasicMaterial example, where we use this property to color the various parts of a line. You can also use this property to create a gradient effect for this material type.   
+**fog** This property determines whether this material is affected by global fog settings. This is not shown in action, but if this is set to false, the global fog we saw in Chapter 2, Basic Components That Make Up a Three.js Scene, doesnt affect how this object is rendered.  
 
 #### THREE.MeshDepthMaterial
 
@@ -218,8 +219,8 @@ cube.children[1].scale.set(0.99, 0.99, 0.99);
 
 **color** This determines the color of the line. If you specify vertexColors, this property is ignored.  
 **linewidth** Materials you can use for a line geometry  
-**linecap** This property defines how the ends of lines look in the wireframe mode. The possible values are butt, round, and square. The default is round. In practice, the results from changing this property are very difficult to see. This property isn`t supported on WebGLRenderer.   
-**linejoin**  Define how the line joints are visualized. The possible values are round, bevel, and miter. The default value is round. If you look very closely, you can see this in the example using low opacity and a very large wireframeLinewidth. This property isn`t supported on WebGLRenderer.   
+**linecap** This property defines how the ends of lines look in the wireframe mode. The possible values are butt, round, and square. The default is round. In practice, the results from changing this property are very difficult to see. This property isnt supported on WebGLRenderer.   
+**linejoin**  Define how the line joints are visualized. The possible values are round, bevel, and miter. The default value is round. If you look very closely, you can see this in the example using low opacity and a very large wireframeLinewidth. This property isnt supported on WebGLRenderer.   
 **vertexColors**  You can supply a specific color for each vertex by setting this property to the THREE.VertexColors value.   
 **fog**  This determines whether this object is affected by the global fog property.  
 
@@ -293,7 +294,7 @@ sizeAttenuation, color) {
 }
 ```
 **color** This is the color of all the particles in ParticleSystem. Setting the vertexColors property to true and specifying the colors using the colors property of the geometry overrides this property (to be more precise, the color of a vertex will be multiplied with this value to determine the final color). The default value is 0xFFFFFF.   
-**map** With this property, you can apply a texture to the particles. You can, for instance, make them look like snowflakes. This property isn`t shown in this example but is explained later on in this chapter.    
+**map** With this property, you can apply a texture to the particles. You can, for instance, make them look like snowflakes. This property isnt shown in this example but is explained later on in this chapter.    
 **size** This is the size of the particle. The default value is 1.  
 **sizeAnnuation**  If this is set to false, all the particles will have the same size regardless of how far from the camera they are positioned. If this is set to true, the size is based on the distance from the camera. The default value is true.  
 **vertexColors** Normally, all the particles in THREE.Points have the same color. If this property is set to THREE.VertexColors and the colors array in the geometry has been filled, the colors from that array will be used instead (also see the color entry in this table). The default value is THREE.NoColors.   
