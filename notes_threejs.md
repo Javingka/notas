@@ -161,11 +161,10 @@ When you use the **lookAt** function, you point the camera at a specific positio
   This is the same as LineBasicMaterial, but this material also allows you to create a dashed effect.   
 
 #### Common material properties
-> **Basic properties**: These are the properties you will use most often. With these properties, you can, for instance, control the opacity of the object, whether it is visible, and how it is referenced (by ID or custom name).   
+- **Basic properties**: These are the properties you will use most often. With these properties, you can, for instance, control the opacity of the object, whether it is visible, and how it is referenced (by ID or custom name).   
 
-> **Blending properties**: Every object has a set of blending properties. These properties define how the object is combined with its background.     
-  
-> **Advanced properties**: There are a number of advanced properties that control how the low-level WebGL context renders objects. In most cases, you wont need to mess with these properties.  
+- **Blending properties**: Every object has a set of blending properties. These properties define how the object is combined with its background.     
+- **Advanced properties**: There are a number of advanced properties that control how the low-level WebGL context renders objects. In most cases, you wont need to mess with these properties.  
 
 ##### Basic Properties
 **id** This is used to identify a material and is assigned when you create a material. This starts at 0 for the first material and is increased by 1 for each additional material that is created.   
@@ -305,18 +304,18 @@ sizeAttenuation, color) {
 **fog** This determines whether the particles are affected by fog added to the scene. This defaults to true.   
 
 Others ways to style the particles:  
-> We can apply THREE.SpriteCanvasMaterial (which only works for THREE. CanvasRenderer ) to use the results from an HTML canvas element as a texture.    
+- We can apply THREE.SpriteCanvasMaterial (which only works for THREE. CanvasRenderer ) to use the results from an HTML canvas element as a texture.    
 
-> Use **THREE.SpriteMaterial** and a HTML5-based texture to use the output of an HTML canvas when working with THREE.WebGLRenderer.    
+- Use **THREE.SpriteMaterial** and a HTML5-based texture to use the output of an HTML canvas when working with THREE.WebGLRenderer.    
 
-> Load an external image file (or use the HTML5 canvas) with the map property of THREE.PointsMaterial to style all particles of THREE.Points     
+- Load an external image file (or use the HTML5 canvas) with the map property of THREE.PointsMaterial to style all particles of THREE.Points     
 
 
 #### Using HTML5 canvas with WebGLRenderer 
 
 Two approach for this:  
-> **A** We can use THREE.PointsMaterial and create THREE.Points.   
-> **B** We can use THREE.Sprite and the map property of THREE.SpriteMaterial.  
+- **A** We can use THREE.PointsMaterial and create THREE.Points.   
+- **B** We can use THREE.Sprite and the map property of THREE.SpriteMaterial.  
 
 ##### A. THREE.PointsMaterial and create THREE.Points.   
 ```
