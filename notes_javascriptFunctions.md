@@ -208,4 +208,72 @@ for (x = 0; x < 10; x++) {
 console.log(x);
 ``` 
 
+### Arrow Prone (ECMAScript 6)
+
+As of ES 5, JavaScript only supports function level scope. This means that this always references the scope inside
+the function body. This quality of function level scope has always been an awkward fact of life for developers who
+are used to block level scope. Many developers resort to routing around this behavior by using free variables or using
+bound functions.  
+
+```
+// Option 1: Use a local free variable to bypass the need to reference this.  
+var VendingMachine = function () {
+  this.stock = ["Sgt. Pepper", "Choke", "Spite"];
+  var that = this;
+  return {
+      dispense: function () {
+      if (that.stock.length > 0) {
+        return that.stock.pop();
+      }
+    }
+  };
+}
+var popMachine = new VendingMachine();
+ 
+// => 'Spite'
+console.log(popMachine.dispense());
+ 
+// Option 2: Use a bound function to reference this.
+var VendingMachine = function () {
+  this.stock = ["Sgt. Pepper", "Choke", "Spite"];
+  var dispense = function () {
+   if (this.stock.length > 0) {
+     return this.stock.pop();
+   }
+  };
+  return {
+   dispense: dispense.bind(this)
+  };
+};
+ 
+var popMachine = new VendingMachine();
+ 
+// => 'Spite'
+console.log(popMachine.dispense());;
+```
+
+Fortunately, one of the major new features of ES 6 is meant to clear up the ambiguities of lexical this—through the
+use of the so-called fat arrow. The fat arrow is a new shorter way to write functions using `=>` instead of `function()
+{}`, and will look familiar to anyone who has used CoffeeScript. As with any change, some developers bemoan what
+they see as unnecessary complexity in how functions work. However, when used for the correct problem, the fat arrow
+does have its advantages. Here is how you might rewrite the VendingMachine function using the fat arrow:   
+
+```
+// Option 3: Use a fat arrow to supply the lexical this.
+var VendingMachine = function () {
+  this.stock = ["Sgt. Pepper", "Choke", "Spite"];
+  return {
+   dispense: () => {
+     if (this.stock.length > 0) {
+       return this.stock.pop();
+     }
+    }
+  };
+};
+ 
+var popMachine = new VendingMachine();
+ 
+// => 'Spite'
+console.log(popMachine.dispense());
+```
 
