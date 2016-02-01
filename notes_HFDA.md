@@ -8,8 +8,8 @@ p7
 p4
   Define your problem. Knowing your problem is the 'very first step'. Your client will help you define your problem
   Disassemble. Data analysist is all about breaking problems and data into smaller pieces
-    You can`t answer the big problems directly. But by answering the smaller problems, you can get your answer to the big one.
-  Evaluate. Here is the meat of the analysis, where you draw your conclusions about what you`ve learned in the first two step
+    You can't answer the big problems directly. But by answering the smaller problems, you can get your answer to the big one.
+  Evaluate. Here is the meat of the analysis, where you draw your conclusions about what you've learned in the first two step
   Decide. Finally, you put it all back together and make (or recommend) a decision.
 
 p7
@@ -24,36 +24,40 @@ Good data analysis is all about keeping focused on what you want to learn about 
 Key ideas.
 p21 Your assumptions and beliefs about the world are your **mental model**. Always make your mental models as **explicit** as possible.  
 p22 Your statistical model depends on your mental models.  
-p25 Mental models should always include what you don`t know.  
+p25 Mental models should always include what you don't know.  
 
-p35 
+p35
   Resume of example
+````
+    DEFINE      Define your problem. You got clarification and data from de CEO                                        
+    |  
+    v   
+    DISASSEMBLE     Breaking into smaller pieces. You summarized what you knew
+                    into a useful format
+	|  
+    v  
+    EVALUATE    Draw your conclusion about above steps. You compared the
+                element of your summary.                                      
+	|  
+	v  
+    DECIDE  Put it all back together an make a decision. You suggested that
+            increasing ads to tweens might bring  sales back in line.   
 
-     DEFINE      Define your problem. You got clarification and data from de CEO                                        
-	|  
-  	v   
-   DISASSEMBLE   Breaking into smaller pieces. You summarized what you knew into a useful format                                 
-	|  
-  	v  
-     EVALUATE    Draw your conclusion about above steps. You compared the element of your summary.                                      
-	|  
-  	v  
-      DECIDE    Put it all back together an make a decision. You suggested that increasing ads to tweens might bring sales back in line.   
-    
-      ==>       An erroneous belief from the CEO misleads the analysis, so you have to repeat the steps now considering the new information.
-                In the example the tween market report challenged your mental model                         
+==>   An erroneous belief from the CEO misleads the analysis, so you have to
+      repeat the steps now considering the new information.
+      In the example the tween market report challenged your mental model                         
 
-     DEFINE      You looked at your areas of uncertainty.                                          
+    DEFINE      You looked at your areas of uncertainty.                                          
 	|  
-  	v   
-   DISASSEMBLE You collected more data about MoisturePlus customers                              
+    v   
+    DISASSEMBLE You collected more data about MoisturePlus customers                              
 	|  
-  	v   
+    v   
     EVALUATE    You discovered older men among MoisturePlus buyers                               
 	|  
-  	v   
-      DECIDE      You recommended increasing marketing to older men   
-
+	v   
+    DECIDE      You recommended increasing marketing to older men   
+````
 [ resume image ](imgs/HFDA/p35a.png)
 
 p37
@@ -64,7 +68,7 @@ p42
   Always use the method of comparison.
     One of the most fundamental principes of analysis and statistics is the 'method of comparision', wich state that data is interesting only in comparision of other data.  
 ####** Observational study ** A stydy where the people being described decide on their own wich groups they belong.   
-   
+
 p43
   Comparisions are the key for observational data
     The more comparative the analysis is, the better. And this is true especially in observational studies.  
@@ -74,19 +78,19 @@ p43
 p47
 ####Confounders
     A 'confounder' is a **difference** among the people in your study **other than** the **factor you are trying to compare** that ends up making your results  less sensible.  
-    If the people is differente from each other in respect to a variable you are trying to undestand, the difference is a confounder. 
+    If the people is differents from each other in respect to a variable you are trying to undestand, the difference is a confounder.
 p50
-   ***Manage confounders by breaking the data into chunks.** To get your observational study confounders **under control**, sometimes it’s a good idea to divide your groups into smaller chunks. 
- 
+   **Manage confounders by breaking the data into chunks.** To get your observational study confounders **under control**, sometimes it’s a good idea to divide your groups into smaller chunks.
+
 p54
-  You need an experiment to say wich strategy will work best
+  You need an experiment to say which strategy will work best
     Is there anything in the data you have that tells you which strategy will help to achieve your goal?. (Observational data by itself can't tell you what will happen in the future.      
   If you want to draw conclusions about things that overlap with your data but are not completely described in the data, you need 'theory'  to make the connection.  
 
 p58
   CONTROL GROUPS  
     A group of treatment subjects  that represent the status quo, not receiving any new treatment.
-    NO control goups means NO comparision. and NO comparision means no idea what happened.
+    NO control groups means NO comparission. and NO comparision means no idea what happened.
 
 p59
   'historial controls' take past data and treat it as the   control. This one not really recomended.
@@ -95,11 +99,11 @@ p59
 
 p75
   OPTIMIZATION
-    
+
     In the case of the example. Analyzing rubber duckies and fish production.
     Divide the data into two categories: things you 'CANT' control & things you 'CAN' control
       In this case you can control the quantity of ducks and fishs to make. And you cant control how profitable are, how much rubber you use and how much time it takes to makes it.
-  
+
 p79
   Constraints limit the variables you control
     They will define the PARAMETER  for your problem.!
@@ -120,7 +124,7 @@ p80
 
        each C refers to a CONSTRAINT
        each X refers to a DESICION
-       P is your objective: the thing you want to maxi or mini mize. 
+       P is your objective: the thing you want to maxi or mini mize.
 
        Yours contrains and decision variables is this ecuation combine to become the profit of ducks and fish, and those together form your objective: the total profit in this example.
 
@@ -134,7 +138,7 @@ p98
 
 p146
   In the hypothesis testing chapter.
-    The variables can be 
+    The variables can be
       negatively linked: More of one means less of the other.
       positively linked: More of one means more of the other.
 
@@ -170,10 +174,10 @@ Un ejemplo clásico es el lanzamiento de una moneda para luego lanzar un dado. �
   equals
   1 - Probability of a negative (-) test result, given that the person does not have the flu. ==> True Negative
 
-p178 
+p178
   BASE RATE
   The average number of times an event occurs divided by the average number  of times it might occurs (freedictionary)
-  1% of the populations has lizard flu. One percent is the BASE RATE. Prior to any analysis and learning ypu know this. That is why BASE RATES are also called PRIOR PROBABILITIES 
+  1% of the populations has lizard flu. One percent is the BASE RATE. Prior to any analysis and learning ypu know this. That is why BASE RATES are also called PRIOR PROBABILITIES
   If you do have a BASE RATE and you dont use it. you will fall victim to the BASE RATE FALLACY, where you ignore your prior data and make the wrong decision because of it.
 
 p182
@@ -190,18 +194,18 @@ p182
 p208
   The 'Standard deviation measures how far points are from the average".
   Most of the points in a data set will be within one standard deviation of the mean.
-  
+
   Ex. in a data set between these values (dots represent values):
 
-                               average 
-                           . .. .|. . .   . 
-                   .   .      . .|..  . . 
+                               average
+                           . .. .|. . .   .
+                   .   .      . .|..  . .
                         ..   .. .|. . .      .
                     .       .. ..|. .. .   .
                         .    . ..|.. ..  .
                     .   .  .  ...|. ....  . .   .     
   0.0   0.1   0.2   0.3   0.4   0.5   0.6   0.7   0.8   0.9   1.0
-                           ____________ 
+                           ____________
           between 0.4 - 0.5 & 0.5 to 0.6 is 'One standard deviation" => 0.1
 
   Most observation in any data set are going to be within one standard deviation of the mean
@@ -211,16 +215,16 @@ p216
   On Subjective probabilities chapter:
   Alongside the BackWather Investiments example. While analysing possibilities using subjectives probabilities, has come out some questions about posibilities to analyse the data adding some recent 'hard' data. Here used to recapitulate the analytics tools seen up to now, maybe it will help to better undesrtand these tools.
 
-  Analytic tools listed. Why would you or wouldn't you use each of these to incorporate 'hard' data onto subjective probabilities 
+  Analytic tools listed. Why would you or wouldn't you use each of these to incorporate 'hard' data onto subjective probabilities
 
 1  Experimental Design? ( the starbucks coffee example. with experiment in the shops to prove hypotheses )
-    R: It is kind of hard to imagine what sort of experiment you could run to get better data. Since all the analyst are evaluating geopolitical events, it seems that every single piece of data they are looking at is observational. 
+    R: It is kind of hard to imagine what sort of experiment you could run to get better data. Since all the analyst are evaluating geopolitical events, it seems that every single piece of data they are looking at is observational.
 
 2  Optimization? ( Ducks and fish example. You have 'Contraints' limiting the variables you can control. And you have 'Decision' variables that you actually CAN control. You have an 'Optimization problem', you want to get as much or as little of something as possible, and the way you will get it is by changing the values of other quantities.)
     R: There is no hard numerical data!. The optimization tools we have learned presuppose that you have numerical data and a numerical result you want to maximize or minimize. Nothing for optimization here.
 
 3  A nice graphics? (Info visualization, site analysis example. Show the data, a good data analysis begins and ends with thinking with data. Data visualization is all about making the right comparisions. The best visualizations are highly multivariate, namely, compare three or more variables.)
-    R:  There is almost always room for a nice data visualization. Once we have revised the subjective probabilities, we will certainly want a new visualization, but for now, we need a tool that gives us better numbers. 
+    R:  There is almost always room for a nice data visualization. Once we have revised the subjective probabilities, we will certainly want a new visualization, but for now, we need a tool that gives us better numbers.
 
 5  Hypothesis testing? ( celular skin example. Data analysis enables you to ecaluate a bunch od options so that you can incorporate all the information you have into your models. You looks for ways to compare yours hypotheses with the data you have. When you are looking for data variables, it's a good idea to ask whether they are POSITIVELY or NEGATIVELY linked.
   As an analyst you need to see beyond simple models, and expect to see CAUSAL NETWORKS. In the real world 'causes' propagate across a network of relatet variables... why should your models be any different?.
@@ -234,8 +238,3 @@ p216
 
 p217
   BAYERS RULE is great for revising subjectives probabilities. It allow you to incorporate new evidence to your beliefs about your hypotheses.
-
-
-
-
-
