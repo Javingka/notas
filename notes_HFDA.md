@@ -66,8 +66,8 @@ p37
 
 p42
   Always use the method of comparison.
-    One of the most fundamental principes of analysis and statistics is the 'method of comparision', wich state that data is interesting only in comparision of other data.  
-####** Observational study ** A stydy where the people being described decide on their own wich groups they belong.   
+    One of the most fundamental principes of analysis and statistics is the 'method of comparison', wich state that data is interesting only in comparision of other data.  
+    **Observational study** A study where the people being described decide on their own which groups they belong.   
 
 p43
   Comparisions are the key for observational data
@@ -75,34 +75,38 @@ p43
 
   In observational data, you just watch people and let them decide wich groups they belong to, and taking an inventory of observational data is often the first step to getting better data through experiments.  
 
-p47
+p47  
 ####Confounders
-    A 'confounder' is a **difference** among the people in your study **other than** the **factor you are trying to compare** that ends up making your results  less sensible.  
-    If the people is differents from each other in respect to a variable you are trying to undestand, the difference is a confounder.
-p50
-   **Manage confounders by breaking the data into chunks.** To get your observational study confounders **under control**, sometimes it’s a good idea to divide your groups into smaller chunks.
 
-p54
-  You need an experiment to say which strategy will work best
-    Is there anything in the data you have that tells you which strategy will help to achieve your goal?. (Observational data by itself can't tell you what will happen in the future.      
-  If you want to draw conclusions about things that overlap with your data but are not completely described in the data, you need 'theory'  to make the connection.  
+A 'confounder' is a **difference** among the people in your study **other than** the **factor you are trying to compare** that ends up making your results  less sensible.  
+If the people is different from each other in respect to a variable you are trying to understand, the difference is a confounder.
 
-p58
-  CONTROL GROUPS  
-    A group of treatment subjects  that represent the status quo, not receiving any new treatment.
-    NO control groups means NO comparission. and NO comparision means no idea what happened.
+p50  
+**Manage confounders by breaking the data into chunks.** To get your observational study confounders **under control**, sometimes it’s a good idea to divide your groups into smaller chunks.
 
-p59
-  'historial controls' take past data and treat it as the   control. This one not really recomended.
-  'contemporaneous controls' control group has its experience at the same time as your experimental group
+p54  
+You need an experiment to say which strategy will work best.  
+Is there anything in the data you have that tells you which strategy will help to achieve your goal?. (Observational data by itself can't tell you what will happen in the future.)      
+If you want to draw conclusions about things that overlap with your data but are not completely described in the data, you need 'theory'  to make the connection.  
 
+p58  
+####Control groups
+A group of treatment subjects that represent the status quo, not receiving any new treatment.
+NO control groups means NO comparison. and NO comparison means no idea what happened.
 
-p75
-  OPTIMIZATION
+p59   
+**historical controls** when you take past data and treat it as the control. This one **not** really recomended.
+**contemporaneous controls** control group has its experience at the same time as your experimental group
 
-    In the case of the example. Analyzing rubber duckies and fish production.
-    Divide the data into two categories: things you 'CANT' control & things you 'CAN' control
-      In this case you can control the quantity of ducks and fishs to make. And you cant control how profitable are, how much rubber you use and how much time it takes to makes it.
+p65  
+Avoid confounders by selecting groups carefully. Using randomness.  
+
+p75  
+###CHAPTER 3. Optimization. Take it to the max
+
+In the case of the example. Analyzing rubber duckies and fish production.
+Divide the data into two categories: things you 'CANT' control & things you 'CAN' control
+In this case you can control the quantity of ducks and fishs to make. And you cant control how profitable are, how much rubber you use and how much time it takes to makes it.
 
 p79
   Constraints limit the variables you control
