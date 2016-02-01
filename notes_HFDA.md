@@ -58,7 +58,7 @@ p35
 	v   
     DECIDE      You recommended increasing marketing to older men   
 ````
-[ resume image ](imgs/HFDA/p35a.png)
+![ resume image ](imgs/HFDA/p35a.png)
 
 p37
 ###CHAPTER 2. Experiment. Test your theories
@@ -126,7 +126,7 @@ When you want to get as much (or as little) of something as possible, and the wa
 
 TO SOLVE an optimization problem, you need to combine your decision variables, constraints, and the thing you want to maximize together into an **objective function.**   
 
-[optimization problem](imgs/HFDA/p80a.png)
+![optimization problem](imgs/HFDA/p80a.png)
 
 ####Objective function
 The 'OBJECTIVE' is the thing you want to maximize or minimize, and you use the OBJECTIVE FUNCTION to find the optimum result.  
