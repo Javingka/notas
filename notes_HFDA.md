@@ -232,11 +232,10 @@ Bayes’ rule manages your base rates when you get new data
 
   P (L|+) = P(L) P(+|L)  /  P(L) P(+|L) + P(-) P(+|~L)
 
-Probability of have flu given a positive test result
-=
-The Base Rate (people who have the flu)  *  People with positive tests having the flu (true positive rate)
-/
-The Base Rate with flu * true positive rate + Base Rate with no flu * false positive rate
+Probability of have flu given a positive test result =
+The Base Rate (people who have the flu)  *  People with positive tests having the flu (true positive rate)  
+/  
+The Base Rate with flu * true positive rate + Base Rate with no flu * false positive rate  
 
 p191  
 ###CHAPTER 7. Subjective probabilities.
