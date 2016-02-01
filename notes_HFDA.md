@@ -1,5 +1,6 @@
 Head First Data Analysis
 
+### CHAPTER 1. introduction to data analysis. Break it down.
 p7
   Data analysis is all about identifying problems and then solving them
   Your problem in exploratory data analysis is to find hypotheses worth testing.
@@ -7,8 +8,8 @@ p7
 p4
   Define your problem. Knowing your problem is the 'very first step'. Your client will help you define your problem
   Disassemble. Data analysist is all about breaking problems and data into smaller pieces
-    You cant answer the big problems directly. But by answering the smaller problems, you can get your answer to the big one.
-  Evaluate. Here is the meat of the analysis, where you draw your conclusions about what you've learned in the first two step
+    You can`t answer the big problems directly. But by answering the smaller problems, you can get your answer to the big one.
+  Evaluate. Here is the meat of the analysis, where you draw your conclusions about what you`ve learned in the first two step
   Decide. Finally, you put it all back together and make (or recommend) a decision.
 
 p7
@@ -18,44 +19,69 @@ p7
     Have you ever made an analysis before?
 
 A lot of data is usually a good thing. Just stay focused on what you are trying to accomplish with the data.
-Good data nalysis is all about keeping focused on what you want to learn about the data.
+Good data analysis is all about keeping focused on what you want to learn about the data.
+
+Key ideas.
+p21 Your assumptions and beliefs about the world are your **mental model**. Always make your mental models as **explicit** as possible.  
+p22 Your statistical model depends on your mental models.  
+p25 Mental models should always include what you don`t know.  
 
 p35 
   Resume of example
 
-  DEFINE      You got clarification and data from de CEO                                        ==>
-  DISASSEMBLE You summarized what you knew into a useful format                                 ==>
-  EVALUATE    You compared the element of your summary.                                         ==>
-  DECIDE      You suggested that increasing ads to tweens might bring sales back in line.       ==>
-  ==>         Then the tween market report challenged your mental model                         ==>
-  DEFINE      You looked at your areas of uncertainty.                                          ==>
-  DISASSEMBLE You collected more data about MoisturePlus customers                              ==>
-  EVALUATE    You discovered older men among MoisturePlus buyers                                ==> 
-  DECIDE      You recommended increasing marketing to older men
+     DEFINE      Define your problem. You got clarification and data from de CEO                                        
+	|  
+  	v   
+   DISASSEMBLE   Breaking into smaller pieces. You summarized what you knew into a useful format                                 
+	|  
+  	v  
+     EVALUATE    Draw your conclusion about above steps. You compared the element of your summary.                                      
+	|  
+  	v  
+      DECIDE    Put it all back together an make a decision. You suggested that increasing ads to tweens might bring sales back in line.   
+    
+      ==>       An erroneous belief from the CEO misleads the analysis, so you have to repeat the steps now considering the new information.
+                In the example the tween market report challenged your mental model                         
+
+     DEFINE      You looked at your areas of uncertainty.                                          
+	|  
+  	v   
+   DISASSEMBLE You collected more data about MoisturePlus customers                              
+	|  
+  	v   
+    EVALUATE    You discovered older men among MoisturePlus buyers                               
+	|  
+  	v   
+      DECIDE      You recommended increasing marketing to older men   
+
+[ resume image ](imgs/HFDA/p35a.png)
 
 p37
-  CHAPTER 2. Experiment
+###CHAPTER 2. Experiment. Test your theories
     Instead of having to rely exclusively on your 'observational data', a well-executed experiment can often help you make 'casual connections'. Strong empirical data will make your analytical judgments all the more powerful.
 
 p42
   Always use the method of comparison.
-    One of the most fundamental principes of analysis and statistics is the 'method of comparision', wich state that data is interesting only in comparision of other data.
+    One of the most fundamental principes of analysis and statistics is the 'method of comparision', wich state that data is interesting only in comparision of other data.  
+####** Observational study ** A stydy where the people being described decide on their own wich groups they belong.   
    
 p43
   Comparisions are the key for observational data
-    The more comparative the analysis is, the better. And this is true especially in observational studies.
+    The more comparative the analysis is, the better. And this is true especially in observational studies.  
 
-  In observational data, you just watch people and let them decide wich groups they belong to, and taking an inventory of observational data is often the first step to getting better data through experiments.
+  In observational data, you just watch people and let them decide wich groups they belong to, and taking an inventory of observational data is often the first step to getting better data through experiments.  
 
 p47
-  Confounders
-    A 'confounder' is a difference among the people in your study other than the factor you are trying to compare that ends up making your results  less sensible.
-    If the people is differente from each other in respect to a variable you are trying to undestand, the difference is a confounder.
-
+####Confounders
+    A 'confounder' is a **difference** among the people in your study **other than** the **factor you are trying to compare** that ends up making your results  less sensible.  
+    If the people is differente from each other in respect to a variable you are trying to undestand, the difference is a confounder. 
+p50
+   ***Manage confounders by breaking the data into chunks.** To get your observational study confounders **under control**, sometimes it’s a good idea to divide your groups into smaller chunks. 
+ 
 p54
   You need an experiment to say wich strategy will work best
-    Is there anything in the data you have that tells you which strategy will help to achieve your goal.
-  If you want to draw conclusions about things that overlap with your data but are not completely described in the data, you need 'theory'  to make the connection.
+    Is there anything in the data you have that tells you which strategy will help to achieve your goal?. (Observational data by itself can't tell you what will happen in the future.      
+  If you want to draw conclusions about things that overlap with your data but are not completely described in the data, you need 'theory'  to make the connection.  
 
 p58
   CONTROL GROUPS  
