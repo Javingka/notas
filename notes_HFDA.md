@@ -150,8 +150,14 @@ An important analysis will write down everything you think you know and everythi
 p111  
 ###CHAPTER 4. Data visualization.
 
+p120
+Data visualization is all about making the right comparisons.  
+To build good visualizations, first identify what are the fundamental comparisons that will address your client’s objectives. Take a look at their most important spreadsheets  
+
 Look for Edward Tufte's visualizations  
 
+p139  
+###CHAPTER 5. Hypothesis testing.
 p146  
 In the hypothesis testing chapter.
 The variables can be
@@ -159,60 +165,88 @@ negatively linked: More of one means less of the other.
 positively linked: More of one means more of the other.
 
 p152
-  FALSIFICATION
-    is a technique where you eliminate the disconformed hypotheses, so you left with just one finally.
+FALSIFICATION
+is a technique where you eliminate the disconformed hypotheses, so you left with just one finally.
 
-  Use FALSIFICATION in HYPOTHESIS testing and avoid the danger of satisficing
+Use FALSIFICATION in HYPOTHESIS testing and avoid the danger of satisficing
+
+p169
+###CHAPTER 6. Bayesian statistics.
+
+p172  
+We go trough the example of the flu gripe.  
+If someone has lizard flu, the probability that the test returns positive for it is 90 percent.
+If someone doesn’t have lizard flu, the probability that the test returns positive for it is 9 percent.
+
+p175  
+####False-positive
+When **falsely** got a **positive** result. These cases are called false positives.  
+**The opposite of a false positive is a true negative.**  
+####True-negative  
+Following the example. True negatives are situations where people who don’t have the disease get a negative test result.  
+**False-positive rate**: If someone doesn’t have lizard flu,  
+the probability that the test returns **positive** for it is **9** percent.
+**True-negative rate**: If someone doesn’t have lizard flu,  
+the probability that the test returns **negative** for it is **91%**.  
+
 
 p176
-  A 'conditional probability' in the probability of some event, given that some other event has happened.
+####Conditionals probabilities
+A 'conditional probability' is the probability of some event, **given** that some other event has happened.
 
-  Good spanish explanation. from wikipedia
-  Probabilidad condicional es la probabilidad de que ocurra un evento A, sabiendo que también sucede otro evento B. La probabilidad condicional se escribe P(A|B), y se lee «la probabilidad de A dado B».
+Good spanish explanation. from [wikipedia](https://es.wikipedia.org/wiki/Probabilidad_condicionada)
+Probabilidad condicional es la probabilidad de que ocurra un evento A, sabiendo que también sucede otro evento B. La probabilidad condicional se escribe P(A|B), y se lee «la probabilidad de A dado B».   
 
-No tiene por qué haber una relación causal o temporal entre A y B. A puede preceder en el tiempo a B, sucederlo o pueden ocurrir simultáneamente. A puede causar B, viceversa o pueden no tener relación causal. Las relaciones causales o temporales son nociones que no pertenecen al ámbito de la probabilidad. Pueden desempeñar un papel o no dependiendo de la interpretación que se le dé a los eventos.
+No tiene por qué haber una relación causal o temporal entre A y B. A puede preceder en el tiempo a B, sucederlo o pueden ocurrir simultáneamente. A puede causar B, viceversa o pueden no tener relación causal. Las relaciones causales o temporales son nociones que no pertenecen al ámbito de la probabilidad. Pueden desempeñar un papel o no dependiendo de la interpretación que se le dé a los eventos.  
 
 Un ejemplo clásico es el lanzamiento de una moneda para luego lanzar un dado. ¿Cuál es la probabilidad de obtener una cara (moneda) y luego un 6 (dado)? Pues eso se escribiría como P (Cara | 6).
 
-  Notation:
+p177
+Notation:  
 
-    P ( +|L ) = 1 - P ( -|L )
+P ( +|L ) = 1 - P ( -|L )  
 
-  Probability of a positive (+) test result, given lizard flu (taking the book example) ==> True Positive
-  equals
-  1 - Probability of a negative (-) test result, given lizard flu. ==> False Negative
+P ( +|L ) -> (True Positive) -> Probability of a positive **(+)** test result, given lizard flu (taking the book example).  
+P ( -|L ) -> (False Negative) -> Probability of a negative **(-)** test result, given lizard flu.  
 
-  --------------------------
+--------------------------
 
-    P ( + | ~L ) = 1 - P ( - | ~L )
+P ( + | ~L ) = 1 - P ( - | ~L )  
 
-  Probability of a positive (+) test result, given that the person does not have the flu. ==> False Positive
-  equals
-  1 - Probability of a negative (-) test result, given that the person does not have the flu. ==> True Negative
+P ( + | ~L ) -> (False Positive) -> Probability of a positive **(+)** test result, given that the person does not have the flu.  
+P ( - | ~L ) -> (True Negative) -> Probability of a negative **(-)** test result, given that the person does not have the flu.  
+
+!But first you need to know how many people have lizard flu. Then you can use these percentages to calculate how many people actually fall into these categories.   
+
 
 p178
-  BASE RATE
-  The average number of times an event occurs divided by the average number  of times it might occurs (freedictionary)
-  1% of the populations has lizard flu. One percent is the BASE RATE. Prior to any analysis and learning ypu know this. That is why BASE RATES are also called PRIOR PROBABILITIES
-  If you do have a BASE RATE and you dont use it. you will fall victim to the BASE RATE FALLACY, where you ignore your prior data and make the wrong decision because of it.
+####Base rate or prior probabilities
+The average number of times an event occurs divided by the average number  of times it might occurs (freedictionary)
+
+1% of the populations has lizard flu. One percent is the BASE RATE. Prior to any analysis and learning you know this. That is why BASE RATES are also called PRIOR PROBABILITIES
+
+If you do have a BASE RATE and you don't use it. you will fall victim to the BASE RATE FALLACY, where you ignore your prior data and make the wrong decision because of it.
 
 p182
-  Bayes’ rule manages your base rates when you get new data
+Bayes’ rule manages your base rates when you get new data
 
   P (L|+) = P(L) P(+|L)  /  P(L) P(+|L) + P(-) P(+|~L)
 
-  Probability of hiva flu given a positive test result
-  =
-  The Base Rate (people who have the flu)  *  People with positive tests having the flu (true positive rate)
-  /
-  The Base Rate with flu * true positive rate + Base RAte with no flu * false positive rate
+Probability of have flu given a positive test result
+=
+The Base Rate (people who have the flu)  *  People with positive tests having the flu (true positive rate)
+/
+The Base Rate with flu * true positive rate + Base Rate with no flu * false positive rate
+
+p191  
+###CHAPTER 7. Subjective probabilities.
 
 p208
-  The 'Standard deviation measures how far points are from the average".
-  Most of the points in a data set will be within one standard deviation of the mean.
+The 'Standard deviation measures how far points are from the average".
+Most of the points in a data set will be within one standard deviation of the mean.
 
-  Ex. in a data set between these values (dots represent values):
-
+Ex. in a data set between these values (dots represent values):
+```
                                average
                            . .. .|. . .   .
                    .   .      . .|..  . .
@@ -223,9 +257,9 @@ p208
   0.0   0.1   0.2   0.3   0.4   0.5   0.6   0.7   0.8   0.9   1.0
                            ____________
           between 0.4 - 0.5 & 0.5 to 0.6 is 'One standard deviation" => 0.1
-
-  Most observation in any data set are going to be within one standard deviation of the mean
-  In 'Excel' you cancalculate with the formula  = STDEV (data range)
+```
+Most observation in any data set are going to be within one standard deviation of the mean
+In 'Excel' you cancalculate with the formula  = STDEV (data range)
 
 p216
   On Subjective probabilities chapter:
