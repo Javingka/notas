@@ -140,7 +140,7 @@ P is your objective: the thing you want to maxi or mini mize.
 
 Yours constrains and decision variables is this equation combine to become the profit of ducks and fish, and those together form your objective: the total profit in this example.  
 
-[objective function](imgs/HDFA/p82a.png)  
+![objective function](imgs/HFDA/p82a.png)  
 
 p98  
 **'ALL MODELS ARE WRONG, BUT SOME ARE USEFUL'** -George Box  
