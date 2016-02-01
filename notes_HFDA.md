@@ -62,18 +62,18 @@ p35
 
 p37
 ###CHAPTER 2. Experiment. Test your theories
-    Instead of having to rely exclusively on your 'observational data', a well-executed experiment can often help you make 'casual connections'. Strong empirical data will make your analytical judgments all the more powerful.
+Instead of having to rely exclusively on your 'observational data', a well-executed experiment can often help you make 'casual connections'. Strong empirical data will make your analytical judgments all the more powerful.
 
-p42
-  Always use the method of comparison.
-    One of the most fundamental principes of analysis and statistics is the 'method of comparison', wich state that data is interesting only in comparision of other data.  
-    **Observational study** A study where the people being described decide on their own which groups they belong.   
+p42  
+Always use the method of comparison.
+One of the most fundamental principles of analysis and statistics is the 'method of comparison', wich state that data is interesting only in comparison of other data.  
+**Observational study** A study where the people being described decide on their own which groups they belong.   
 
 p43
-  Comparisions are the key for observational data
-    The more comparative the analysis is, the better. And this is true especially in observational studies.  
+Comparisons are the key for observational data.
+The more comparative the analysis is, the better. And this is true especially in observational studies.  
 
-  In observational data, you just watch people and let them decide wich groups they belong to, and taking an inventory of observational data is often the first step to getting better data through experiments.  
+In observational data, you just watch people and let them decide which groups they belong to, and taking an inventory of observational data is often the first step to getting better data through experiments.  
 
 p47  
 ####Confounders
@@ -87,7 +87,9 @@ p50
 p54  
 You need an experiment to say which strategy will work best.  
 Is there anything in the data you have that tells you which strategy will help to achieve your goal?. (Observational data by itself can't tell you what will happen in the future.)      
+Here comes the **experiments.**  
 If you want to draw conclusions about things that overlap with your data but are not completely described in the data, you need 'theory'  to make the connection.  
+In order to get more clarity about which strategy is better, you’re going to need to run an **experiment.**
 
 p58  
 ####Control groups
@@ -104,47 +106,57 @@ Avoid confounders by selecting groups carefully. Using randomness.
 p75  
 ###CHAPTER 3. Optimization. Take it to the max
 
-In the case of the example. Analyzing rubber duckies and fish production.
-Divide the data into two categories: things you 'CANT' control & things you 'CAN' control
-In this case you can control the quantity of ducks and fishs to make. And you cant control how profitable are, how much rubber you use and how much time it takes to makes it.
+In the case of the example. Analyzing rubber duckies and fish production.  
 
-p79
-  Constraints limit the variables you control
-    They will define the PARAMETER  for your problem.!
-    These Contraints are related with the things that you 'CANT' control.
+p78  
+Divide the data into two categories: things you **CAN'T** control & things you **CAN** control
+In this case you can control the quantity of ducks and fishes to make. And you can't control how profitable are, how much rubber you use and how much time it takes to makes it.
 
-  Decision variables are things you 'CAN' control
+p79  
+####Controllables and constrained variables
+They will define the **PARAMETERS**  for your problem.!
+These Constraints are related with the things that you **CAN'T** control.
 
-p80
-  When you want to get as much (or as little) of something as possible, and the way you will get it is by changing the values of other quantities, you have an OPTIMIZATION PROBLEM
+**Constraints** limit the variables you control.  
+**Decision** variables are things you 'CAN' control.  
 
-  TO SOLVE an optimization problem, you need to combine your desicion variables, contraints, and the thing you want to maximize together into an
-  OBJECTIVE FUNCION
+p80  
+####Optimization problem
+When you want to get as much (or as little) of something as possible, and the way you will get it is by changing the values of other quantities, you have an OPTIMIZATION PROBLEM
 
-  The 'OBJECTIVE' is the thing you want to maximize or minimize, and you use the OBJETIVE FUNCTION to find the optimum result
-    Algeibraically:
+TO SOLVE an optimization problem, you need to combine your decision variables, constraints, and the thing you want to maximize together into an **objective function.**   
 
-        C1X1 + c2x2 = P
+[optimization problem](imgs/HFDA/p80a.png)
 
-       each C refers to a CONSTRAINT
-       each X refers to a DESICION
-       P is your objective: the thing you want to maxi or mini mize.
+####Objective function
+The 'OBJECTIVE' is the thing you want to maximize or minimize, and you use the OBJECTIVE FUNCTION to find the optimum result.  
 
-       Yours contrains and decision variables is this ecuation combine to become the profit of ducks and fish, and those together form your objective: the total profit in this example.
+Algebraically:  
+**C<sub>1</sub>X<sub>1</sub> + C<sub>2</sub>X<sub>2</sub> = P**  
 
-p98
-  'ALL MODELS ARE WRONG, BUT SOME ARE USEFUL' -George Box
+each C refers to a CONSTRAINT  
+each X refers to a DECISION variable.  
+P is your objective: the thing you want to maxi or mini mize.  
 
-  An important analysis will write down everything you think you know and everything you think you dont know
+Yours constrains and decision variables is this equation combine to become the profit of ducks and fish, and those together form your objective: the total profit in this example.  
 
+[objective function](imgs/HDFA/p82a.png)  
 
-  Look for Edward Tufte's visualizations
+p98  
+**'ALL MODELS ARE WRONG, BUT SOME ARE USEFUL'** -George Box  
 
-p146
-  In the hypothesis testing chapter.
-    The variables can be
-      negatively linked: More of one means less of the other.
-      positively linked: More of one means more of the other.
+An important analysis will write down everything you think you know and everything you think you dont know  
+
+p111  
+###CHAPTER 4. Data visualization.
+
+Look for Edward Tufte's visualizations  
+
+p146  
+In the hypothesis testing chapter.
+The variables can be
+negatively linked: More of one means less of the other.
+positively linked: More of one means more of the other.
 
 p152
   FALSIFICATION
