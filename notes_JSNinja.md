@@ -119,9 +119,100 @@ Our iteration function sports a simple signature that expects the array of objec
 We use the call() method of the callback function, passing the current iteration entry as the first parameter and the loop index as the second. This should cause the current entry to become the function context and the index to be passed as the single parameter to the callback.  
 We set up a simple array (3) and then call the forEach() function, passing the test array and a callback within which we test that the expected entry is set as the function context for each invocation of the callback (4). Figure 3.10 (not showed in this sumary)  shows that our function works splendidly.   
 
+###Chapter 4. Wielding functions
 
+####Anonymous functions
+Anonymous functions are typically used in cases where we wish to create a function for later use, such as storing it in a variable, establishing it as a method of an object, or using it as a callback (for example, as a timeout or event handler). In all of these situ- ations, the function doesn’t need to have a name for later reference.    
 
+![anonymous functions](imgs/JSNinja/p62a.png)   
 
+#####Recursion in named functions 
+There are any number of common examples for recursive functions. One is the test for a palindrome, this is perhaps the “Hello world!” for recursive techniques.  
 
+By using a more mathematical definition of a palindrome, we can come up with a more elegant solution. Here’s the definition:  
+- A single or zero-character string is a palindrome.   
+- Any other string is a palindrome if the first and last characters are the same, and the string that remains, excepting those characters, is a palindrome.  
 
+````
+function isPalindrome(text) {
+  if (text.length <= 1) return true;
+  if (text.charAt(0) != text.charAt(text.length - 1)) return false;
+  return isPalindrome(text.substr(1,text.length - 2));
+}
+````
+
+Another example
+
+````
+function chirp(n) {
+    return n > 1 ? chirp(n - 1) + "-chirp" : "chirp";
+}
+assert(chirp(3) == "chirp-chirp-chirp",
+        "Calling the named function comes naturally.");
+````
+
+The function above satisfies two criteria for recursion: 
+- a reference to self, and   
+- convergence towards termination.  
+
+The function clearly calls itself, so the first criterion is satisfied. And because the value of parameter n decreases with each iteration, it will sooner or later reach a value of one or less and stop the recursion, satisfying the second criterion.   
+
+Note that a **“recursive”** function that **doesn’t** converge toward termination is better known as an **infinite loop!**  
+
+#####Recursion with methods
+In the previous section, we said that we were going to give our ninja the ability to chirp, but we really didn’t. What we created was a standalone function for chirping.   
+Let’s fix that by declaring the recursive function as a method of a ninja object.   
+This complicates things a bit, because the recursive function becomes an anonymous func- tion assigned to an object’s property, as you can see in the next listing.  
+
+````
+var ninja = {
+  chirp: function(n) {
+	return n > 1 ? ninja.chirp(n - 1) + "-chirp" : "chirp";
+  } 
+};
+assert(ninja.chirp(3) == "chirp-chirp-chirp",
+         "An object property isn't too confusing, either.");
+````
+
+In this test, we defined our recursive function as an anonymous function referenced by the chirp property of the ninja object.  
+Within the function, we invoke the function recursively via a reference to the object’s property: ninja.chirp().  
+We can’t reference it directly by its name as we did in listing 4.2, because it doesn’t have one.  
+
+![relationship](imgs/JSNinja/p66a.png)
+
+p.67
+#####The pilfered reference problem   
+
+````
+var ninja = {
+    chirp: function(n) {
+      return n > 1 ? ninja.chirp(n - 1) + "-chirp" : "chirp";
+    }
+  };
+  var samurai = { chirp: ninja.chirp };
+ninja = {};
+try {
+    assert(samurai.chirp(3) == "chirp-chirp-chirp",
+          "Is this going to work?");
+} catch(e){
+    assert(false,
+           "Uh, this isn't good! Where'd ninja.chirp go?");
+}
+````
+
+The above test do not pass!.  
+
+A diagram of the relationships created is shown in figure 4.3    
+
+![pilfered reference](imgs/JSNinja/p68a.png)  
+
+We can rectify this problem by fixing the initially sloppy definition of the recursive function. Rather than explicitly referencing ninja in the anonymous function, we should have used the function context (this) as follows:     
+
+```` 
+var ninja = {
+  chirp: function(n) {
+    return n > 1 ? this.chirp(n - 1) + "-chirp" : "chirp";
+  }
+};
+````
 
