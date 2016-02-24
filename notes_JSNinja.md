@@ -2,7 +2,7 @@
 ###Chapter 3
 p47  
 ###Scopes  
-[Scopes](imgs/JSNinja/p47a.png)
+![Scopes](imgs/JSNinja/p47a.png)
 
 4 ways to invoke a function:   
 ■ As a function, in which the function is invoked in a straightforward manner   
@@ -72,7 +72,7 @@ Except for being able to leave off the implicit window reference, it’s the sam
 The function “belongs” to window, and window is set as the function context, in the same way that object o is the function context in the above example.
 Even though these mechanisms look different, they’re really the same.   
 
-[Scopes 2](imgs/JSNinja/p51a.png)   
+![Scopes 2](imgs/JSNinja/p51a.png)   
 
 Note that even though the same function is used throughout all these examples, the function context for each invocation of the function changes depending upon **how the function is invoked**,
  rather than on how it was declared.   
@@ -92,7 +92,7 @@ When a constructor is onvoked:
 - This object is passed to the constructor as the this parameter, and thus becomes the constructor’s function context.  
 - In the absence of any explicit return value, the new object is returned as the constructor’s value.  
 
-[Scopes 3](imgs/JSNinja/p53a.png)   
+![Scopes 3](imgs/JSNinja/p53a.png)   
 
 #####Coding considerations for constructors  
 **Functions and methods** are generally named starting with a verb that describes what they do **(skulk(), creep(), sneak(), doSomethingWonderful(), and so on)** and start with a lowercase letter.   
@@ -108,12 +108,12 @@ To invoke a function using its apply() method, we pass two parameters to apply()
 
 The call() method is used in a similar manner, except that the arguments are passed directly in the argument list rather than as an array.  
 
-[Scopes 4](imgs/JSNinja/p55a.png)   
+![Scopes 4](imgs/JSNinja/p55a.png)   
 
 p.57
 Let’s consider a concrete example of forcing the function context to be an object of our own choosing. Let’s take a simple function that will perform an operation on every entry of an array.  
 
-[Scopes 5](imgs/JSNinja/p57a.png)   
+![Scopes 5](imgs/JSNinja/p57a.png)   
 
 Our iteration function sports a simple signature that expects the array of objects to be iterated over as the first argument and a callback function as the second (1). The function iterates over the array entries, invoking the callback function (2) for each entry.  
 We use the call() method of the callback function, passing the current iteration entry as the first parameter and the loop index as the second. This should cause the current entry to become the function context and the index to be passed as the single parameter to the callback.  
