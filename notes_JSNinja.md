@@ -302,11 +302,11 @@ function getElements(name) {
 
 iThe memoization (caching) code is quite simple and doesn’t add that much extra complexity to the overall querying process. But if we do some performance analysis upon the function, we’ll find that this simple layer of caching yields us a 5x performance increase, as shown in table 4.1. Not a bad superpower to have.   
 
-![self-memoizing functions 2](imgs/JSNinja/p75a.png)
+![self-memoizing functions 2](imgs/JSNinja/p75a.png)  
 
 #####Faking array methods
 
-![faking array methods ](imgs/JSNinja/p75a.png)
+![faking array methods ](imgs/JSNinja/p76a.png)  
 In this example, we’re creating a “normal” object and instrumenting it to mimic some of the behaviors of an array.  
 First, we define a length property to record the number of element that are stored (1), just like an array.    
 Then we define a method to add an ele- ment to the end of our simulated array, calling this method simply add() (2).   
@@ -321,7 +321,7 @@ p.77
 ####Variable-length argument lists  
 #####Using apply() to supply variable arguments 
 
-![Generic Min Max for arrays](imgs/JSNinja/p78a.png)
+![Generic Min Max for arrays](imgs/JSNinja/p78a.png)   
 
 In this code we define two functions: one to find the smallest value within an array (1), and one to find the largest value (2).  
 Notice how both functions use the apply() method to supply the value in the passed arrays as variable-length argument lists to the Math functions.  
@@ -363,7 +363,7 @@ Remember that what we’re trying to do is to merge the properties of any object
 **TIP** To check whether an argument that corresponds to a named parameter was passed, we can use the expression ````paramname === undefined````, which will evaluate to **true** if there’s no corresponding argument.   
 **TIP** If you haven’t seen a for-in statement before, it simply iterates through all the properties of an object, setting the property name (key) as the iteration item.   
 
-**SLICING AND DICING AN ARGUMENTS LIST**
+**SLICING AND DICING AN ARGUMENTS LIST**   
 
 For our next example, we’ll build a function that multiplies the first argument with the largest of the remaining arguments.  
 This probably isn’t something that’s particularly applicable in our applications, but it is an example of yet more techniques for dealing with arguments within a function.  
@@ -378,12 +378,12 @@ This probably isn’t something that’s particularly applicable in our applicat
 ````
 Fools the slice() method into working on the arguments list, which you may recall isn’t an instance of Array.   
 
-**FUNCTION OVERLOADING APPROACHES**
+**FUNCTION OVERLOADING APPROACHES**  
 When it comes to function overloading—the technique of defining a function that does different things based upon what’s passed to it—it’s easy to imagine that such a function could be easily implemented by using the mechanisms we’ve learned so far to inspect the argument list, and to perform different actions in if-then and else-if clauses. Often, that approach will serve us well, especially if the actions to be taken are on the simpler side.  
 But once things start getting a bit more complicated, lengthy functions using many such clauses can quickly become unwieldy. In the remainder of this section, we’re going to explore a technique by which we can create multiple functions—seemingly with the same name, but each differentiated from the others by the number of arguments they expect—that can be written as distinct and separate anonymous functions rather than as a monolithic if-then-else-if block.  
 All of this hinges on a little-known property of functions that we need to learn about first.  
 
-**THE FUNCTION’S LENGTH PROPERTY**
+**THE FUNCTION’S LENGTH PROPERTY**  
 There’s an interesting property on all functions that isn’t very well known, but that gives us an insight into how the function was declared: the length property.    
 This property, **not to be confused** with the **length** property of the **arguments parameter**, equates to the number of named parameters with which the function was declared.  
 
@@ -398,7 +398,7 @@ As a result, within a function, we can determine two things about its arguments:
 - How many named parameters it was declared with, via the **length property**  
 - How many arguments were passed on the invocation, via **arguments.length**  
 
-**OVERLOADING FUNCTIONS BY ARGUMENT COUNT**
+**OVERLOADING FUNCTIONS BY ARGUMENT COUNT**  
 Suppose we want to have a method on an object that performs different operations based upon argument count.  
 If we want to have long, monolithic functions, we could do something like the following:  
 
