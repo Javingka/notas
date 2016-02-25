@@ -566,4 +566,312 @@ In other words, the closure isn’t simply a snapshot of the state of the scope 
 
 ![multiple closures](imgs/JSNinja/p99a.png)
 
+p.100 
+####Binding function contexts
+Consider the following code, in which a function that serves as an object method is bound to a DOM element as an event listener.   
+
+![binding context to a function](imgs/JSNinja/p100a.png)
+
+When we load the example into a browser and click the button, we see that something is amiss; the test has failed.  
+Recalling the lessons of chapter 3, if we had called the function via  
+````button.click()````  
+the context **would** indeed have been the button. 
+But in our example, the event-handling system of the browser defines the context of the invocation to be the target element of the event, which causes the context to be the <button> element, not the button object.  
+So we set our click state on the wrong object!   
+
+Take a look at the following code, which updates the code of listing 5.7 with additions (in bold) to bend the function context to our wills.  
+
+![binding specific context to a function](imgs/JSNinja/p101a.png)
+
+This particular implementation of a binding function makes the assumption that we’re going to be using an existing method of an object (a function attached as a property), and that we want that object to be the context.    
+With that assumption,````bind()```` only needs two pieces of information: a reference to the object containing the method, and the name of the method.   
+
+![binding specific context to a function depicted](imgs/JSNinja/p102a.png)
+
+This ````bind()```` function is a simplified version of a function popularized by the Prototype JavaScript library, which promotes writing code in a clean and classical object-oriented manner.  
+The original Prototype version of the method looks something like the following code:   
+
+````
+// Adds the bind() method to all functions via its prototype. That’s something we’ll see in the next chapter.  
+Function.prototype.bind = function(){
+  var fn = this, args = Array.prototype.slice.call(arguments),
+    object = args.shift();
+  return function(){
+    return fn.apply(object,
+	args.concat(Array.prototype.slice.call(arguments)));
+  };
+};
+var myObject = {};
+function myFunction(){
+  return this == myObject;
+}
+assert( !myFunction(), "Context is not set yet" );
+var aFunction = myFunction.bind(myObject);
+assert( aFunction(), "Context is set properly" );
+````
+
+This method is quite similar to the function we implemented in listing 5.8, but with a couple of notable additions.   
+To start, it attaches itself to all functions, rather than presenting itself as a globally accessible function by adding itself as a property of the prototype of JavaScript’s Function.   
+
+p.103 
+####Partially applying functions
+“Partially applying” a function is a particularly interesting technique in which we can prefill arguments to a function before it’s even executed. In effect, partially applying a function returns a new function with predefined arguments, which we can later call.  
+
+This sort of proxy function **—one that stands in for another function and calls that function when executed—**.  
+This technique of filling in the first few arguments of a function (and returning a new function) is typically called **currying.**  
+
+Let’s say that we wanted to split a CSV (comma-separated value) string into its com- ponent parts, ignoring extraneous whitespace.   
+
+Listing 5.10 Partially applying arguments to a native function:   
+```` 
+String.prototype.csv = String.prototype.split.partial(/,\s*/); // (1)
+
+var results = ("Mugan, Jin, Fuu").csv(); // (2) 
+
+// (3)
+assert(results[0]=="Mugan" &&  
+       results[1]=="Jin" &&
+       results[2]=="Fuu",
+       "The text values were split properly");
+````
+
+In listing 5.10 we’ve taken the String’s ````split()```` method and have imagined a ````partial()```` method (yet to be implemented, but we’ll take care of that in listing 5.12) that we can use to prefill the regular expression upon which to split (1).   
+The result is a new function named ````csv()```` that we can call at any point to convert a list of comma-separated values (2) into an array without having to deal with messy regular expressions.  
+
+With all that in mind, let’s look at how a partial/curry method is (more or less) implemented in the Prototype library, as seen in the next listing.  
+
+
+Listing 5.11 An example of a curry function (filling in the first specified arguments)
+````
+Function.prototype.curry = function() {
+  // Remembers the function and “prefill” arguments in variables that will be captured in the closure (1) 
+  var fn = this,
+      args = Array.prototype.slice.call(arguments);
+
+  // Creates the anonymous curried function  (2)
+  return function() {
+    return fn.apply(this, args.concat(
+      Array.prototype.slice.call(arguments)));
+  }; 
+};
+````
+
+This technique is another good example of using a closure to remember state.  
+In this case, we want to remember the function that we’re augmenting (the **this** parameter is never included in any closure, because each function invocation has its own version of **this**) and the arguments to be prefilled B and transfer them to the newly constructed function (2). 
+
+This new function will have the filled-in arguments and the new arguments concatenated together and passed.   
+
+While this style of partial function application is perfectly useful, we can do better. What if we wanted to fill in any missing argument from a given function, not just those at the beginning of the argument list?  
+
+Listing 5.12 A more complex “partial” function
+````
+Function.prototype.partial = function() {
+  var fn = this, args = Array.prototype.slice.call(arguments);
+  return function() {
+    var arg = 0;
+    for (var i = 0; i < args.length && arg < arguments.length; i++) {
+      if (args[i] === undefined) {
+        args[i] = arguments[arg++];
+} }
+    return fn.apply(this, args);
+  };
+};
+````
+
+This implementation is fundamentally similar to Prototype’s curry() method, but it has a couple of important differences.   
+Notably, the user can specify arguments anywhere in the parameter list that will be filled in later by specifying the undefined value for “missing” arguments.   
+To accommodate this, we’ve increased the abilities of our argument-merging technique.   
+Effectively, we loop through the arguments that are passed in and look for the appropriate gaps (the undefined values), filling in the missing pieces as we go along.  
+
+Thinking back to the example of constructing a string-splitting function, let’s look at some other ways in which this new functionality could be used. To start, we could construct a function that has the ability to be easily delayed:
+
+````
+var delay = setTimeout.partial(undefined, 10);
+
+delay(function(){
+  assert(true,
+	"A call to this function will be delayed 10 ms.");
+  });
+````
+
+This snippet creates a new function, named delay(), into which we can pass another function that will be called asynchronously after 10 milliseconds.   
+
+We could also create a simple function for binding events:  
+```` 
+var bindClick = document.body.addEventListener
+  .partial("click", undefined, false);
+
+bindClick(function(){
+  assert(true, "Click event bound via curried function.");
+});
+````
+
+This technique could be used to construct simple helper methods for event-binding in a library. The result would be a simpler API where the end user wouldn’t be inconve- nienced by unnecessary function arguments, reducing them to a simpler function call.   
+
+p.106 
+####Overriding function behavior 
+#####Momoization 
+
+( I jump this section in order to get summarized other part that get more atention to my right now )
+
+p.109 
+#####Function wrapping
+Function wrapping is a technique for encapsulating the logic of a function while overwriting it with new or extended functionality in a single step.  
+It’s best used when we wish to override some previous behavior of a function, while still allowing certain use cases to execute.   
+
+A common use is when implementing pieces of cross-browser code in situations where a deficiency in a browser must be accounted for. Consider, for example, working around a bug in Opera’s implementation of accessing title attributes. 
+In the Prototype library, the function-wrapping technique is employed to work around this bug.  
+
+![wrapping old functions](imgs/JSNinja/p109a.png)
+
+![wrapping old functions depict](imgs/JSNinja/p110a.png)
+
+####Inmediate functions
+```` (function(){})() ````
+
+First, let’s ignore the contents of the first set of parentheses, and examine the construct:  
+````(...)()````
+
+We know that we can call any function using the ````functionName()```` syntax, but in place of the function name we can use any expression that references a function instance.   
+That’s why we can call a function referenced by a variable that refers to the function using the variable name, like this:    
+
+````
+var someFunction = function(){ ... };
+result = someFunction();
+````
+
+As with other expressions, if we want an operator—in this case, the function call operator ()—to be applied to an entire expression, we’d enclose that expression in a set of parentheses.    
+Consider how the expressions ````(3 + 4) * 5 ````and ````3 + (4 * 5)```` differ from each other.   
+
+That means that in ````(...)()````, the first set of parentheses is merely a set of delimiters enclosing an expression, whereas the second set is an operator.   
+It’d be perfectly legal to change our example to the following, in which the expression that references the function is enclosed in parentheses:   
+
+````
+var someFunction = function(){ ... }; 
+result = (someFunction)();
+````
+
+It’s just a bit confusing that each set of parentheses has a very different meaning. If the function call operator were something like || rather than (), the expression (...)|| would likely be less confusing.
+
+Now, rather than the variable name, if we directly provided the anonymous func- tion (omitting any function body for the moment for brevity) within the first set of parentheses, we’d end up with this syntax:   
+(**function(){...}**)();
+
+The result of this code is an expression that does all of the following in a single statement:  
+- Creates a function instance  
+- Executes the function  
+- Discards the function (as there are no longer any references to it after the statement has ended)  
+
+#####Temporary scope and private variables
+
+Using immediate functions, we can start to build up interesting enclosures for our work. Because the function is executed immediately, and, as with all functions, all the variables inside of it are confined to its inner scope, we can use it to create a temporary scope, within which our state can be contained.  
+
+**CREATING A SELF-CONTAINED SCOPE**   
+````
+(function(){
+  var numClicks = 0;
+  document.addEventListener("click", function(){
+    alert( ++numClicks );
+  }, false);
+})();
+````
+
+Because the immediate function is executed immediately (hence its name), the click handler is also bound right away. The important thing to note is that a closure is created for the handler that includes numClicks, allowing the numClicks variable to persist along with the handler, and be referenceable by the handler **but nowhere else**.   
+
+But it’s important to remember that because immediate functions are functions, they can be used in interesting ways, like this:  
+````
+document.addEventListener("click", (function(){
+  var numClicks = 0;
+  return function(){
+    alert( ++numClicks );
+  };
+})(), false);
+````
+
+This technique involves a very different way of looking at scope. In many languages, you can scope things based upon the block they’re in. In JavaScript, variables are scoped based upon the closure they’re in.  
+
+**ENFORCING NAMES IN A SCOPE VIA PARAMETERS**  
+
+![jQueryexample on self-contained scope](imgs/JSNinja/p114a.png)
+
+**KEEPING CODE READABLE WITH SHORTER NAMES**   
+
+Often, we’ll have a fragment of code that makes frequent references to an object. If the reference is long and involved, all those repeated references to the long name can make the code difficult to read.    
+
+The sophisticated functional programmer can use an immediate function to introduce the short name into a limited scope. Here’s a quick example of doing just that from the Prototype JavaScript library:   
+
+```` 
+(function(v) {
+  Object.extend(v, {
+             href:
+             src:
+             type:
+             action:
+             disabled:    v._flag,
+             checked:     v._flag,
+             readonly:    v._flag,
+             multiple:    v._flag,
+             onload:      v._getEv,
+             onunload:    v._getEv,
+             onclick:     v._getEv,
+             ...
+           });
+})(Element.attributeTranslations.read.values);
+````
+
+#####Loops 
+
+The next code is broke: 
+````
+
+  <div>DIV 0</div>
+  <div>DIV 1</div>
+  <script type="text/javascript">
+	var divs = document.getElementsByTagName("div");
+    	for (var i = 0; i < divs.length; i++) {
+      		divs[i].addEventListener("click", function() {
+			alert("divs #" + i + " was clicked.");
+      		}, false);
+	}
+</script>
+````
+It will always alert the last value stored in i; in this case, 2.
+
+The solution (another closure): 
+````
+<div>DIV 0</div>
+<div>DIV 1</div>
+<script type="text/javascript">
+  var div = document.getElementsByTagName("div");
+	for (var i = 0; i < div.length; i++) (function(n){ div[n].addEventListener("click", function(){
+      		alert("div #" + n + " was clicked.");
+    		}, false);
+	})(i);
+</script>
+`````
+
+#####Library wrapping
+
+````
+
+          (function(){
+           var jQuery = window.jQuery = function(){
+             // Initialize
+           };
+// ... })();
+
+````
+Note that there’s a double assignment performed, completely intentionally. First, the jQuery constructor (as an anonymous function) is assigned to window.jQuery, which introduces it as a global variable.   
+But that doesn’t guarantee that it will stay that way; it’s completely within the realms of possibility that code outside our control may change or remove the variable. To avoid that problem, we assign it to a local variable, jQuery, to enforce it as such with the scope of the immediate function.   
+
+Another way to do the same:   
+
+````
+var jQuery = (function(){
+  function jQuery(){
+    // Initialize
+  }
+  // ...
+  return jQuery;
+})();
+````
 
