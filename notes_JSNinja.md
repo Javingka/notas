@@ -573,10 +573,8 @@ Consider the following code, in which a function that serves as an object method
 ![binding context to a function](imgs/JSNinja/p100a.png)
 
 When we load the example into a browser and click the button, we see that something is amiss; the test has failed.  
-Recalling the lessons of chapter 3, if we had called the function via  
-````button.click()````  
-the context **would** indeed have been the button. 
-But in our example, the event-handling system of the browser defines the context of the invocation to be the target element of the event, which causes the context to be the <button> element, not the button object.  
+Recalling the lessons of chapter 3, if we had called the function via  ````button.click()```` the context **would** indeed have been the button.   
+But in our example, the event-handling system of the browser defines the context of the invocation to be the target element of the event, which causes the context to be the <button> element, not the button object.    
 So we set our click state on the wrong object!   
 
 Take a look at the following code, which updates the code of listing 5.7 with additions (in bold) to bend the function context to our wills.  
