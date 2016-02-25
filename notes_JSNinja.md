@@ -727,8 +727,7 @@ In the Prototype library, the function-wrapping technique is employed to work ar
 ####Inmediate functions
 ```` (function(){})() ````
 
-First, let’s ignore the contents of the first set of parentheses, and examine the construct:  
-````(...)()````
+First, let’s ignore the contents of the first set of parentheses, and examine the construct:````(...)()````
 
 We know that we can call any function using the ````functionName()```` syntax, but in place of the function name we can use any expression that references a function instance.   
 That’s why we can call a function referenced by a variable that refers to the function using the variable name, like this:    
