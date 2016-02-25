@@ -710,7 +710,7 @@ p.106
 ####Overriding function behavior 
 #####Momoization 
 
-( I jump this section in order to get summarized other part that get more atention to my right now )
+( I jumped this section in order to get summarize others part that are more important to me right now )
 
 p.109 
 #####Function wrapping
@@ -872,4 +872,199 @@ var jQuery = (function(){
   return jQuery;
 })();
 ````
+p.119
+###Chapter 6. Object-orientation with prototypes 
+
+####Instantiation and prototypes
+All functions have a prototype property that initially references an empty object. This property doesn’t serve much purpose until the function is used as a constructor. We saw in chapter 3 that using the new keyword to invoke a function calls the function as a constructor with a newly instantiated and empty object as its context.    
+
+#####Object instantiation  
+
+The simplest way to create a new object:  
+````
+var o = {};
+````
+This creates a new and empty object, which we can then populate with properties via assignment statements:    
+````
+var o = {};
+o.name = 'Saito';
+o.occupation = 'marksman';
+o.cyberizationLevel = 20;
+````
+But those coming from an object-oriented background might miss the encapsulation and structuring that comes with the concept of a class constructor: a function that serves to initialize the object to a known initial state.   
+
+JavaScript provides such a mechanism, though in a very different form than most other languages.   
+Like object-oriented languages such as Java and C++, JavaScript employs the new operator to instantiate new objects via constructors, but there’s no class definition in JavaScript.    
+Rather, the new operator, applied to a constructor function (as we observed in chapters 3 and 4), triggers the creation of a newly allocated object.    
+
+**PROTOTYPES AS OBJECT BLUEPRINTS**  
+
+Let’s examine a simple case of using a function, both with and without the new operator, and see how the prototype property provides properties for the new instance. Consider the following code.   
+
+![creating new instance with prototype method](imgs/JSNinja/p121a.png)
+
+**INSTANCE PROPERTIES**  
+When the function is called as a constructor via the new operator, its context is defined as the new object instance. This means that in addition to attaching properties via the prototype, we can initialize values within the constructor function via the this parameter.   
+Let’s examine the creation of such instance properties in the next listing.
+
+![precedence of initialization](imgs/JSNinja/p122a.png)
+
+When we run the test d by loading the page into the browser, we see that the test passes! This shows that instance members created inside a constructor will occlude properties of the same name defined in the prototype.  
+The precedence of the initialization operations is important and goes as follows:  
+- Properties are bound to the object instance from the prototype.  
+- Properties are added to the object instance within the constructor function.  
+
+![changing prototype](imgs/JSNinja/p123a.png)
+
+A simplified overview of the process is as follows:   
+- When a property reference to an object is made, the object itself is checked to see if the property exists. If it does, the value is taken. If not ...  
+- The prototype associated with the object is located, and it is checked for the property. If it exists, the value is taken. If not ...  
+- The value is undefined.  
+
+![diagram](imgs/JSNinja/p124a.png)
+
+![diagram 2](imgs/JSNinja/p126a.png)
+
+#####Object typing via constructors 
+
+![type of an instance](imgs/JSNinja/p127a.png)
+
+In listing 6.5 we define a constructor and create an object instance using it.   
+Then we examine the type of the instance using the typeof operator (1). This isn’t very revealing, as all instances will be objects, thus always returning "object" as the result.   
+Much more interesting is the instanceof operator (2), which is really helpful in that it gives us a clear way to determine whether an instance was created by a particular function constructor.  
+
+On top of this, we can also make use of the constructor property, that we now know is added to all instances, as a reference back to the original function that created it.  
+We can use this to verify the origin of the instance (much like how we can with the instanceof operator).
+
+Listing 6.6 Instantiating a new object using a reference to a constructor   
+````
+function Ninja(){}
+  var ninja = new Ninja();
+  var ninja2 = new ninja.constructor();
+  assert(ninja2 instanceof Ninja, "It's a Ninja!");
+  assert(ninja !== ninja2, "But not the same Ninja!");
+````
+
+#####Inheritance and the prototype chain
+
+There’s an additional feature of the instanceof operator that we can use to our advantage to utilize a form of object inheritance. But in order to make use of it, we need to understand how inheritance works in JavaScript and what role the prototype chain plays.   
+
+````
+function Person(){}
+  Person.prototype.dance = function(){};
+function Ninja(){} Ninja.prototype = new Person();
+
+var ninja = new Ninja();
+assert(ninja instanceof Ninja,"ninja receives functionality from the Ninja prototype");
+assert(ninja instanceof Person, "... and the Person prototype");
+assert(ninja instanceof Object, "... and the Object prototype");
+assert(typeof ninja.dance == "function", "... and can dance!")
+````
+
+An additional happy side effect of doing prototype inheritance in this manner is that all inherited function prototypes will continue to live-update. The manner in which the prototype chain is applied for our example is shown in figure 6.8.   
+
+![prototype chain](imgs/JSNinja/p131a.png)
+
+The following listing shows a possible implementation of forEach() that we could use to fill the gap in older browsers.
+
+Listing 6.9 A future-proof JavaScript 1.6 forEach() method implementation    
+````
+if (!Array.prototype.forEach) {
+	Array.prototype.forEach = function(callback, context) {
+      	  for (var i = 0; i < this.length; i++) {
+            callback.call(context || null, this[i], i, this);
+      	  } 
+	};
+}
+
+["a", "b", "c"].forEach(function(value, index, array) { assert(value,
+		"Is in position " + index + " out of " +
+		(array.length - 1));
+		}
+);
+````
+
+Listing 6.10 Adding a new method to all HTML elements via the HTMLElement prototype.   
+
+````
+<div id="parent">
+  <div id="a">I`m going to be removed.</div>
+  <div id="b">Me too!</div>
+</div>
+<script type="text/javascript">
+  HTMLElement.prototype.remove = function() {
+    if (this.parentNode)
+      this.parentNode.removeChild(this);
+  };
+  var a = document.getElementById("a");
+  a.parentNode.removeChild(a);
+  document.getElementById("b").remove();
+  assert(!document.getElementById("a"),"a is gone.");
+  assert(!document.getElementById("b"),"b is gone too.");
+</script>
+````
+
+####The gotchas!
+#####Extending Object  
+
+```` 
+<script type="text/javascript">
+  Object.prototype.keys = function() {
+    var keys = [];
+    for (var p in this) keys.push(p);
+    return keys;
+};
+  var obj = { a: 1, b: 2, c: 3 };
+  assert(obj.keys().length == 3,
+        "There are three properties in this object.");
+</script>
+````
+
+What went wrong, of course, is that in adding the keys() method to Object, we introduced another property that will appear on all objects and that is included in the count.  
+This affects all objects and will force any code to have to account for the extra property.   
+This could break code that’s based upon perfectly reasonable assumptions made by page authors. This is obviously unacceptable. Don’t do it!   
+
+JavaScript provides a method called **hasOwnProperty()**, which can be used to determine whether properties are actually defined on an object instance versus imported from a prototype.  
+
+Listing 6.12 Using the hasOwnProperty() method to tame Object prototype extensions  
+````
+<script type="text/javascript">
+  Object.prototype.keys = function() {
+    var keys = [];
+    for (var i in this)
+       if (this.hasOwnProperty(i)) keys.push(i); // (1) 
+    return keys;
+};
+  var obj = { a: 1, b: 2, c: 3 };
+  assert(obj.keys().length == 3,
+         "There are three properties in this object.");
+</script>
+````
+Ignores prototyped properties by using ````hasOwnProperty()```` to skip over properties from the (1) prototype
+Our redefined method ignores non-instance properties (1) so that this time the test succeeds.   
+
+#####Extending Number  
+
+![extending number](imgs/JSNinja/p137a.png)
+
+But when we try to load the page into a browser, the page won’t even load, as shown in figure 6.10. It turns out that the syntax parser can’t handle the literal case.    
+
+#####Subclassing native objects
+
+ skipped
+
+#####Instantiation issues 
+
+ skipped ...but just a few recalls
+
+Recall a few important concepts:
+- We can get a reference to the currently executing function via arguments.callee (we learned this in chapter 4).  
+- The context of a “regular” function is the global scope (unless someone did something to make it not so).  
+- The instanceof operator for a constructed object tests for its constructor. Using these facts, we can see that the expression, this instanceof arguments.callee will evaluate to true when executed within a constructor, but false when executed within a regular function.   
+
+p.143 
+####Writing class-like code 
+
+
+
 
