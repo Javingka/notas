@@ -331,7 +331,7 @@ This isn’t necessary (the min() and max() methods will continue to work regard
 #####Function overloading
 All functions are implicitly passed this important parameter, which gives our functions the power to handle any number of passed arguments. Even if we only define a certain number of parameters, we’ll always be able to access all passed arguments through the arguments parameter.   
 
-**DETECTING AND TRAVERSING ARGUMENTS**
+**DETECTING AND TRAVERSING ARGUMENTS**  
 In other, more pure, object-oriented languages, method overloading is usually effected by declaring distinct implementations of methods of the same name but with differing parameter lists.  
 That’s not how it’s done in JavaScript. In JavaScript, we **“overload”** functions with a single implementation that modifies its behavior by inspecting the number and nature of the passed arguments.   
 
@@ -476,5 +476,94 @@ function isFunction(fn) {
 return Object.prototype.toString.call(fn) === "[object Function]";
 }
 ````
+
+p.89 
+###Chapter 5. Closing in on closures
+
+####How closures work
+Succinctly put, a **closure** is the scope created when a function is declared that allows the function to access and manipulate variables that are external to that function.  
+Put another way, **closures** allow a function to access all the variables, as well as other functions, that are in scope when the function itself is declared.  
+
+````
+var outerValue = 'ninja'; // (1)
+function outerFunction() { //(2)
+    assert(outerValue == "ninja","I can see the ninja.");
+}
+outerFunction(); //(3)
+````
+In this code example, we declare a variable (1) and a function (2) in the same scope— in this case, the global scope. Afterwards, we cause the function to execute (3).  
+
+Not impressed? I guess that’s not surprising. Because both the outer value and the outer function are declared in global scope, that scope (which is actually a closure) never goes away (as long as the page is loaded), and it’s not surprising that the function can access the variable because it’s still in scope and viable. Even though the closure exists, its benefits aren’t yet clear.  
+
+Let’s spice it up a little in the next listing.  
+
+![a not so simple closure](imgs/JSNinja/p91a.png)
+Let’s over-analyze the code in innerFunction() and see if we predict what might happen. The first assert is certain to pass: outerValue is in the global scope and is visible to everything.   
+But what about the second?
+We’re executing the inner function after the outer function has been executed via the trick of copying a reference to the function to a global reference (later).   
+When the inner function executes, the scope inside the outer function is long gone and not visible at the point at which we’re invoking the function through later.  
+So we could very well expect the assert to fail, as innerValue is sure to be undefined. Right?  
+But when we run the test, all of them pass.   
+
+![protective bubble](imgs/JSNinja/p92a.png)
+
+When we declared innerFunction() inside the outer function, not only was the function declaration defined, but a closure was also created that encompasses not only the function declaration, but also all variables that are in scope **at the point of the declaration**.  
+
+When innerFunction() eventually executes, even if it’s executed after the scope in which it was declared goes away, it has access to the original scope in which it was declared through its closure, as shown in Figure 5.3.   
+That’s what closures are all about. They create a **“safety bubble,”** if you will, of the function and the variables that are in scope at the point of the function’s declaration, so that the function has all it will need to execute.  
+This **“bubble,”** containing the function and its variables, stays around as long as the function itself does.  
+
+Let’s augment that example with a few additions to observe a few more core principles of closures.   
+
+![Closures can see](imgs/JSNinja/p93a.png)
+
+We added a parameter (1) to the inner function, and we pass a value to the function when it’s invoked through later (5).  
+We also added a variable that’s declared after the outer function declaration (4).  
+When the tests inside (2) and outside (3) the inner function execute, we can see all tests pass.  
+
+This shows three more interesting concepts regarding closures:  
+- Function parameters are included in the closure of that function. (Seems obvious, but now we’ve said it for sure.)  
+- All variables in an outer scope, even those declared after the function declaration, are included.   
+- Within the same scope, variables not yet defined cannot be forward-referenced.  
+
+####Putting closures to work
+
+#####Private variables 
+A common use of closures is to encapsulate some information as a **“private variable”** of sorts—in other words, to limit the scope of such variables.  
+Object-oriented code written in JavaScript is unable to use traditional private variables: properties of the object that are hidden from outside parties.  
+But by using the concept of a closure, we can achieve an acceptable approximation, as demonstrated by the following code.   
+
+![closures to aproximate private variables](imgs/JSNinja/p94a.png)
+
+We create a function that is to serve as a constructor (1). Recall that when using the **new** keyword on a function (5), a new object instance is created and the function is called, with that new object as its context, to serve as a constructor to that object. 
+So **this** within the function is a newly instantiated object.  
+
+Within the constructor, we define a variable to hold state, feints (2). The JavaScript scoping rules for this variable limit its accessibility to within the constructor.  
+To give access to the value of the variable from code that’s outside the scope, we define an **accessor** method (3), ````getFeints()````, which can be used to read, but not write to, the private variable.   
+**(Accessor methods are frequently called “getters.”)***
+
+An implementation method,````feint()````, is then created to give us control over the value of the variable in a controlled fashion (4).   
+
+After the constructor has been established, we invoke it with the new operator (5) and then call the ````feint()```` method (6).  
+
+This situation is depicted in figure 5.5.   
+
+![example private variables](imgs/JSNinja/p95a.png)
+
+#####Callbacks and timers
+
+![closures on Ajax request](imgs/JSNinja/p96a.png)
+
+**TIP** Using the $ sign as a suffix or prefix is a jQuery convention to indicate that the variable holds a jQuery object reference.  
+
+![closures in a timer](imgs/JSNinja/p97a.png)
+
+By defining the variables inside the function, and by relying upon the closures to make them available to the timer callback invocations, each animation gets its own private “bubble” of variables, as shown in figure 5.7.  
+
+There’s another important concept that this example makes clear.   
+Not only do we see the values that these variables had at the time the closure was created, but we can also update them within the closure while the function within the closure executes.   
+In other words, the closure isn’t simply a snapshot of the state of the scope at the time of creation, but an active encapsulation of that state that can be modified as long as the closure exists.    
+
+![multiple closures](imgs/JSNinja/p99a.png)
 
 
